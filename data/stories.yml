@@ -1,30 +1,16 @@
-version: "2.0"
-
-stories:
-
-- story: happy path
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
-
-- story: sad path 1
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
-
-- story: sad path 2
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+#version: "2.0"
+#
+#stories:
+#  - story: greet and faq
+#    steps:
+#      - intent: faq/greet
+#      - action: utter_faq/greet
+#      - intent: faq/question
+#      - action: utter_faq/question
+#  - story: chitchat
+#    steps:
+#      - intent: chitchat/ask_name
+#      - action: utter_chitchat/ask_name
+#      - intent: chitchat/ask_weather
+#      - action: utter_chitchat/ask_weather
+#
