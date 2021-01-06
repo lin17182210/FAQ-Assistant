@@ -125,6 +125,7 @@ actions:
 - utter_answer_faq/changeVoice
 - utter_answer_faq/authorizationFlipCourseware
 - utter_answer_faq/commentPaperNoExamination
+- utter_answer_faq/cantMoveDiscussionArea
 - utter_answer_faq/cantloadCourseware
 - utter_answer_faq/noEnterClassButton
 - utter_answer_faq/arrangeTemporarySchoolTimetable
