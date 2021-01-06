@@ -1,16 +1,40 @@
-#version: "2.0"
-#
-#stories:
-#  - story: greet and faq
-#    steps:
-#      - intent: faq/greet
-#      - action: utter_faq/greet
-#      - intent: faq/question
-#      - action: utter_faq/question
-#  - story: chitchat
-#    steps:
-#      - intent: chitchat/ask_name
-#      - action: utter_chitchat/ask_name
-#      - intent: chitchat/ask_weather
-#      - action: utter_chitchat/ask_weather
-#
+version: "2.0"
+
+stories:
+  - story: chitchat
+    steps:
+      - intent: chitchat/greet
+      - action: utter_answer_chitchat/greet
+      - intent: chitchat/whoareyou
+      - action: utter_answer_chitchat/whoareyou
+      - intent: chitchat/whattodo
+      - action: utter_answer_chitchat/whattodo
+      - intent: chitchat/thanks
+      - action: utter_answer_chitchat/thanks
+      - intent: chitchat/goodbye
+      - action: utter_answer_chitchat/goodbye
+  - story: unhappy chitchat
+    steps:
+      - intent: chitchat/greet
+      - action: utter_answer_chitchat/greet
+      - intent: chitchat/whattodo
+      - action: utter_answer_chitchat/whattodo
+      - intent: chitchat/base
+      - action: utter_answer_chitchat/base
+      - intent: chitchat/deny
+      - action: utter_answer_chitchat/deny
+  - story: chitchat and faq
+    steps:
+      - intent: chitchat/greet
+      - action: utter_answer_chitchat/greet
+      - intent: faq/beikeUpdateToSchoolTimetable
+      - action: utter_answer_faq/beikeUpdateToSchoolTimetable
+      - intent: chitchat/affirm
+      - action: utter_answer_chitchat/affirm
+      - intent: chitchat/stop
+      - action: utter_answer_chitchat/stop
+  - story: faq
+    steps:
+      - intent: faq/lessonCantComplete
+      - action: utter_answer_faq/lessonCantComplete
+
