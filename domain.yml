@@ -4,152 +4,194 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- chitchat
-- faq
+- greet
+- goodbye
+- whoareyou
+- whattodo
+- thanks
+- deny
+- affirm
+- base
+- stop
+- beikeUpdateToSchoolTimetable
+- lessonCantComplete
+- examinationNoPermission
+- lessonGarbledCode
+- ipadNoVoicedOnClass
+- lockScreen
+- changeVoice
+- authorizationFlipCourseware
+- commentPaperNoExamination
+- cantMoveDiscussionArea
+- cantloadCourseware
+- noEnterClassButton
+- arrangeTemporarySchoolTimetable
+- ipadCantEnterClass
+- externalReleaseStudentVoice
+- connectMicrophoneNoVoice
+- examinationNoScore
+- ipadEditQuestion
+- microcourseCantUpload
+- shareResourceEditCanUpdate
+- whereMyCourseware
+- microcourseFlashScreen
+- homeworkSelectErrorStudent
+- homeworkSelectError
+- cantSelectPhotoHomework
+- howChangeHomeworkTime
+- cantChangeHomeworkTime
+- whatIsHomeworkType
+- mutualCorrectionStudentCnt
+- classTestChange
+- ipadPrintPhoneticSymbols
+- tipFixFlash
+- pageApplyFlower
+- videotapeCanAccelerate
+- cantChangeHeadPortrait
 responses:
-  utter_answer_chitchat/greet:
+  utter_answer_greet:
   - text: 您好！请问我可以帮到您吗？
   - text: 您好！很高兴为您服务。请说出您要查询的功能？
-  utter_answer_chitchat/goodbye:
+  utter_answer_goodbye:
   - text: 再见
   - text: 拜拜
   - text: 虽然我有万般舍不得，但是天下没有不散的宴席~祝您安好！
   - text: 期待下次再见！
   - text: 嗯嗯，下次需要时随时记得我哟~
   - text: see you!
-  utter_answer_chitchat/whoareyou:
+  utter_answer_whoareyou:
   - text: 您好！我是您的AI智能助理！
-  utter_answer_chitchat/whattodo:
+  utter_answer_whattodo:
   - text: 您好！很高兴为您服务，我目前只能解决常见问题。
-  utter_answer_chitchat/thanks:
+  utter_answer_thanks:
   - text: 嗯呢。不用客气~
   - text: 这是我应该做的，主人~
   - text: 嗯嗯，合作愉快！
-  utter_answer_chitchat/deny:
+  utter_answer_deny:
   - text: 主人，您不开心吗？不要离开我哦
   - text: 怎么了，主人？
-  utter_answer_chitchat/affirm:
+  utter_answer_affirm:
   - text: 嗯嗯，好的！
   - text: 嗯嗯，很开心能够帮您解决问题~
   - text: 嗯嗯，还需要什么我能够帮助您的呢？
-  utter_answer_chitchat/base:
+  utter_answer_base:
   - text: 呃呃呃呃呃
   - text: 您这是在尬聊吗？
-  utter_answer_chitchat/stop:
+  utter_answer_stop:
     - text: 现在还小
     - text: 不太会
-  utter_answer_faq/beikeUpdateToSchoolTimetable:
+  utter_answer_beikeUpdateToSchoolTimetable:
   - text: 您好，备课模块更新不会同步到课表，需要进行重新关联，课表备课更新会同步到备课模块的备课包中。
-  utter_answer_faq/lessonCantComplete:
+  utter_answer_lessonCantComplete:
   - text: 您好，单纯的PPT课件，不符合完成的条件。您阅读完成即可
-  utter_answer_faq/examinationNoPermission:
+  utter_answer_examinationNoPermission:
   - text: 您好，查看需要绑定对应的学科学段和班级，需要在网页端进行修改和绑定班级。
-  utter_answer_faq/lessonGarbledCode:
+  utter_answer_lessonGarbledCode:
   - text: 您好，这个由于是浏览器的极速模式导致的，可以在网址栏的最后点击闪电标志切换到兼容模式或者换个浏览器尝试。
-  utter_answer_faq/ipadNoVoicedOnClass:
+  utter_answer_ipadNoVoicedOnClass:
   - text: 您好，如果是个别学生，麻烦让学生在个人中心里切换下平板设置里面的“课堂线路”或者暂时换个网络环境；如果是大多数，您先更换下网络环境。
-  utter_answer_faq/lockScreen:
+  utter_answer_lockScreen:
   - text: 您好，默认的锁屏需要在首页点击“头像”-“设置”-“课堂设置”中进行设置。课中的临时锁屏点击左上角头像-“课堂设置”-“锁屏”。
-  utter_answer_faq/changeVoice:
+  utter_answer_changeVoice:
   - text: 您好，在课中点击左上角头像-“课堂设置”-“变声”，先完成录音，在弹出的变声弹窗中调节音色
-  utter_answer_faq/authorizationFlipCourseware:
+  utter_answer_authorizationFlipCourseware:
   - text: 您好，课中没有授权的情况下可以开启和关闭课件的自由翻页功能，授权的情况下无法进行自由翻页。
-  utter_answer_faq/commentPaperNoExamination:
+  utter_answer_commentPaperNoExamination:
   - text: 您好，需要满足2个条件：您的课是行政班或是学考班的课程，且考试已经公布了成绩。
-  utter_answer_faq/cantMoveDiscussionArea:
+  utter_answer_cantMoveDiscussionArea:
   - text: 您好，双击讨论区蓝色边框可进行上浮移动。讨论区和课件是否重叠跟电脑自身分辨率有关，不影响学生观看课件。
-  utter_answer_faq/cantloadCourseware:
+  utter_answer_cantloadCourseware:
   - text: 您好，平板上课件加载不出，很可能是网络不稳定导致的。建议切换信号较好的WiFi尝试下，同时注意下系统时间是否正常，如果出现时间异常也可能导致加载不出，需要您校准系统时间。
-  utter_answer_faq/noEnterClassButton:
+  utter_answer_noEnterClassButton:
   - text: 您好，可能是平板页面排版问题，点击平板“设置”—“显示”—“字体大小”，进行字体调节。
-  utter_answer_faq/arrangeTemporarySchoolTimetable:
+  utter_answer_arrangeTemporarySchoolTimetable:
   - text: 您好，平板端在线校园课堂——临时课表，点击右下角“我要排课”小图标进行临时排课。PC端的功能按钮位于：“在线校园课堂”——“临时课表”。点击右上角“我要排课”小图标进行临时排课。
-  utter_answer_faq/ipadCantEnterClass:
+  utter_answer_ipadCantEnterClass:
   - text: 您好，平板无法进入课堂可能是网络问题导致的。建议您尝试点击头像--切换课堂线路，或者切换信号较好的WiFi。
-  utter_answer_faq/externalReleaseStudentVoice:
+  utter_answer_externalReleaseStudentVoice:
   - text: 您好，我们的平板为了保证上课时的安静，默认关闭学生平板声音外放，如果需要学生平板声音外放。只要点击左侧头像——允许学生平板外放声音即可。
-  utter_answer_faq/connectMicrophoneNoVoice:
+  utter_answer_connectMicrophoneNoVoice:
   - text: 您好，您先使用QQ语音和朋友打电话，检测是不是电脑的问题；如果通话正常，这边技术人员帮您远程调试
-  utter_answer_faq/examinationNoScore:
+  utter_answer_examinationNoScore:
   - text: 您好，学生考试之后是否手动点击提交试卷。如果没有，是否在考试后点击补交试卷，如果没有，那么确实是没有分数的。如果手动提交了试卷或者考试后补交，请提供账号密码，这边帮您进一步解决。
-  utter_answer_faq/ipadEditQuestion:
+  utter_answer_ipadEditQuestion:
   - text: 您好，平板无法编辑题目，可去网页端进行编辑。
-  utter_answer_faq/microcourseCantUpload:
+  utter_answer_microcourseCantUpload:
   - text: 您好，课中上传的微课大小不得大于50M。您可以通过资源库或者备课包进行上传。
-  utter_answer_faq/shareResourceEditCanUpdate:
+  utter_answer_shareResourceEditCanUpdate:
   - text: 您好，分享者编辑试卷提交后会同步更新到校本资源库
-  utter_answer_faq/whereMyCourseware:
+  utter_answer_whereMyCourseware:
   - text: 这种情况一般为账号绑定了多个学科学段，在我的资源里，“+”号右边的按钮可以切换学段学科。选择你所绑定的其他学科即可。
-  utter_answer_faq/microcourseFlashScreen:
+  utter_answer_microcourseFlashScreen:
   - text: 先进入平板设置——存储，查看当前平板的存储空间是否足够。进入乐课APP首页，点击设置——异常上报。
-  utter_answer_faq/homeworkSelectErrorStudent:
+  utter_answer_homeworkSelectErrorStudent:
   - text: 您好，这可能是您的班级成员名单有改动导致的。您在之后的作业模块布置作业时，不要点击“最近常用”，重新选择一下学生和班级，数据会自动同步更新的。
-  utter_answer_faq/homeworkSelectError:
+  utter_answer_homeworkSelectError:
   - text: 您好，在作业模块，找到这份作业，点击“更多操作”，“作废”。
-  utter_answer_faq/cantSelectPhotoHomework:
+  utter_answer_cantSelectPhotoHomework:
   - text: 您好，布置作业时，在“试卷批改方式”一栏将“按分数批改”切换为“按对错批改”。拍照作业为对错作业，在“按分数批改”的模式下是无法选中的
-  utter_answer_faq/howChangeHomeworkTime:
+  utter_answer_howChangeHomeworkTime:
   - text: 您好，在作业模块找到指定作业，点击“更多操作”-“修改时间”。
-  utter_answer_faq/cantChangeHomeworkTime:
+  utter_answer_cantChangeHomeworkTime:
   - text: 在作业开始之后，只可以修改截止时间；在截止时间之后，就不能修改了。
-  utter_answer_faq/whatIsHomeworkType:
+  utter_answer_whatIsHomeworkType:
   - text: 您好，备课包中布置的三合一作业(课前的预习、课中的随堂测试、课后的复习)以及作业模块中布置的拍照作业属于对错作业；作业模块布置的普通作业同时具备设置为对错作业和分数作业的功能。
-  utter_answer_faq/mutualCorrectionStudentCnt:
+  utter_answer_mutualCorrectionStudentCnt:
   - text: 您好，互批作业指定人数没有限制。
-  utter_answer_faq/classTestChange:
+  utter_answer_classTestChange:
   - text: 您好，随堂测试属于三合一作业，如果该三合一作业未包含课后作业，是可以课后进行批改的；如果包含了课后作业，无法对课中的进行批改。
-  utter_answer_faq/ipadPrintPhoneticSymbols:
+  utter_answer_ipadPrintPhoneticSymbols:
   - text: 您好，长按字母，会出现音标提示，选择即可。
-  utter_answer_faq/tipFixFlash:
+  utter_answer_tipFixFlash:
   - text: 您好，可以进入浏览器设置，将缓存清理掉，再重新修复下flash试试。
-  utter_answer_faq/pageApplyFlower:
+  utter_answer_pageApplyFlower:
   - text: 您好，网页版无法申请红花奖励，申请奖励可以使用平板端。
-  utter_answer_faq/videotapeCanAccelerate:
+  utter_answer_videotapeCanAccelerate:
   - text: 您好，目前暂时还不支持录像倍速播放，该功能还在完善中。
-  utter_answer_faq/cantChangeHeadPortrait:
+  utter_answer_cantChangeHeadPortrait:
   - text: 您好，学校设置了更换头像的次数，更换头像是有限的。
 actions:
-- utter_answer_chitchat/greet
-- utter_answer_chitchat/goodbye
-- utter_answer_chitchat/whoareyou
-- utter_answer_chitchat/whattodo
-- utter_answer_chitchat/thanks
-- utter_answer_chitchat/deny
-- utter_answer_chitchat/affirm
-- utter_answer_chitchat/base
-- utter_answer_chitchat/stop
-- utter_answer_faq/beikeUpdateToSchoolTimetable
-- utter_answer_faq/lessonCantComplete
-- utter_answer_faq/examinationNoPermission
-- utter_answer_faq/lessonGarbledCode
-- utter_answer_faq/ipadNoVoicedOnClass
-- utter_answer_faq/lockScreen
-- utter_answer_faq/changeVoice
-- utter_answer_faq/authorizationFlipCourseware
-- utter_answer_faq/commentPaperNoExamination
-- utter_answer_faq/cantMoveDiscussionArea
-- utter_answer_faq/cantloadCourseware
-- utter_answer_faq/noEnterClassButton
-- utter_answer_faq/arrangeTemporarySchoolTimetable
-- utter_answer_faq/ipadCantEnterClass
-- utter_answer_faq/externalReleaseStudentVoice
-- utter_answer_faq/connectMicrophoneNoVoice
-- utter_answer_faq/examinationNoScore
-- utter_answer_faq/ipadEditQuestion
-- utter_answer_faq/microcourseCantUpload
-- utter_answer_faq/shareResourceEditCanUpdate
-- utter_answer_faq/whereMyCourseware
-- utter_answer_faq/microcourseFlashScreen
-- utter_answer_faq/homeworkSelectErrorStudent
-- utter_answer_faq/homeworkSelectError
-- utter_answer_faq/cantSelectPhotoHomework
-- utter_answer_faq/howChangeHomeworkTime
-- utter_answer_faq/cantChangeHomeworkTime
-- utter_answer_faq/whatIsHomeworkType
-- utter_answer_faq/mutualCorrectionStudentCnt
-- utter_answer_faq/classTestChange
-- utter_answer_faq/ipadPrintPhoneticSymbols
-- utter_answer_faq/tipFixFlash
-- utter_answer_faq/pageApplyFlower
-- utter_answer_faq/videotapeCanAccelerate
-- utter_answer_faq/cantChangeHeadPortrait
+- utter_answer_greet
+- utter_answer_goodbye
+- utter_answer_whoareyou
+- utter_answer_whattodo
+- utter_answer_thanks
+- utter_answer_deny
+- utter_answer_affirm
+- utter_answer_base
+- utter_answer_stop
+- utter_answer_beikeUpdateToSchoolTimetable
+- utter_answer_lessonCantComplete
+- utter_answer_examinationNoPermission
+- utter_answer_lessonGarbledCode
+- utter_answer_ipadNoVoicedOnClass
+- utter_answer_lockScreen
+- utter_answer_changeVoice
+- utter_answer_authorizationFlipCourseware
+- utter_answer_commentPaperNoExamination
+- utter_answer_cantMoveDiscussionArea
+- utter_answer_cantloadCourseware
+- utter_answer_noEnterClassButton
+- utter_answer_arrangeTemporarySchoolTimetable
+- utter_answer_ipadCantEnterClass
+- utter_answer_externalReleaseStudentVoice
+- utter_answer_connectMicrophoneNoVoice
+- utter_answer_examinationNoScore
+- utter_answer_ipadEditQuestion
+- utter_answer_microcourseCantUpload
+- utter_answer_shareResourceEditCanUpdate
+- utter_answer_whereMyCourseware
+- utter_answer_microcourseFlashScreen
+- utter_answer_homeworkSelectErrorStudent
+- utter_answer_homeworkSelectError
+- utter_answer_cantSelectPhotoHomework
+- utter_answer_howChangeHomeworkTime
+- utter_answer_cantChangeHomeworkTime
+- utter_answer_whatIsHomeworkType
+- utter_answer_mutualCorrectionStudentCnt
+- utter_answer_classTestChange
+- utter_answer_ipadPrintPhoneticSymbols
+- utter_answer_tipFixFlash
+- utter_answer_pageApplyFlower
+- utter_answer_videotapeCanAccelerate
+- utter_answer_cantChangeHeadPortrait
