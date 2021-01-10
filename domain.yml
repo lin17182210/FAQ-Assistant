@@ -78,8 +78,11 @@ responses:
   - text: 呃呃呃呃呃
   - text: 您这是在尬聊吗？
   utter_answer_stop:
-    - text: 现在还小
-    - text: 不太会
+  - text: 现在还小
+  - text: 不太会
+  utter_answer_fallback:
+  - text: 我没能理解到这句话的意思，你可以换种说法吗？
+  - text: 我没有明白你说的意思，你可以描述的更加仔细一点吗
   utter_answer_beikeUpdateToSchoolTimetable:
   - text: 您好，备课模块更新不会同步到课表，需要进行重新关联，课表备课更新会同步到备课模块的备课包中。
   utter_answer_lessonCantComplete:
@@ -151,6 +154,7 @@ responses:
   utter_answer_cantChangeHeadPortrait:
   - text: 您好，学校设置了更换头像的次数，更换头像是有限的。
 actions:
+- utter_answer_fallback
 - utter_answer_greet
 - utter_answer_goodbye
 - utter_answer_whoareyou
