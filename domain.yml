@@ -48,7 +48,20 @@ intents:
 - pageApplyFlower
 - videotapeCanAccelerate
 - cantChangeHeadPortrait
+entities:
+  - address
+slots:
+  address:
+    type: list
+    influence_conversation: false
+  date_time:
+    type: list
+    influence_conversation: false
 responses:
+  utter_ask_address:
+  - text: 你要查询的地址是哪里？
+  - text: 你要查哪里的天气？
+  - text: 查询的地址是哪里
   utter_answer_greet:
   - text: 您好！请问我可以帮到您吗？
   - text: 您好！很高兴为您服务。请说出您要查询的功能？
@@ -80,9 +93,12 @@ responses:
   utter_answer_stop:
   - text: 现在还小
   - text: 不太会
+  utter_ask_continue:
+    - text: 请问您还要继续吗?
+  utter_default:
+  - text: 我没能理解到这句话的意思，你可以换种说法吗？ defalut
   utter_answer_fallback:
-  - text: 我没能理解到这句话的意思，你可以换种说法吗？
-  - text: 我没有明白你说的意思，你可以描述的更加仔细一点吗
+  - text: 我没有明白你说的意思，你可以描述的更加仔细一点吗? rule
   utter_answer_beikeUpdateToSchoolTimetable:
   - text: 您好，备课模块更新不会同步到课表，需要进行重新关联，课表备课更新会同步到备课模块的备课包中。
   utter_answer_lessonCantComplete:
@@ -199,3 +215,5 @@ actions:
 - utter_answer_pageApplyFlower
 - utter_answer_videotapeCanAccelerate
 - utter_answer_cantChangeHeadPortrait
+forms:
+  weather_form: {}

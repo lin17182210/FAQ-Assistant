@@ -23,7 +23,9 @@ pipeline:
    - name: DIETClassifier
      epochs: 100
    - name: FallbackClassifier
-     threshold: 0.15
+     threshold: 0.3
+     ambiguity_threshold: 0.01
+#     ambiguity_threshold: 0.3
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
@@ -37,6 +39,9 @@ policies:
 #     epochs: 100
   - name: MemoizationPolicy
   - name: TEDPolicy
-    max_history: 5
+    max_history: 6
     epochs: 70
   - name: RulePolicy
+    core_fallback_threshold: 0.3
+    core_fallback_action_name: "action_default_fallback"
+    enable_fallback_prediction: True
