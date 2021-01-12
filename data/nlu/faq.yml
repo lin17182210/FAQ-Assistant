@@ -129,9 +129,6 @@ nlu:
   examples: |
     - 作业怎么修改时间
     - 怎么修改作业的时间
-- intent: cantChangeHomeworkTime
-  examples: |
-    - 在作业开始时间之前，可以修改开始时间和截止时间
     - 无法修改作业时间
 - intent: whatIsHomeworkType
   examples: |

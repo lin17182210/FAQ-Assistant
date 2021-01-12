@@ -39,7 +39,6 @@ intents:
 - homeworkSelectError
 - cantSelectPhotoHomework
 - howChangeHomeworkTime
-- cantChangeHomeworkTime
 - whatIsHomeworkType
 - mutualCorrectionStudentCnt
 - classTestChange
@@ -150,9 +149,7 @@ responses:
   utter_answer_cantSelectPhotoHomework:
   - text: 您好，布置作业时，在“试卷批改方式”一栏将“按分数批改”切换为“按对错批改”。拍照作业为对错作业，在“按分数批改”的模式下是无法选中的
   utter_answer_howChangeHomeworkTime:
-  - text: 您好，在作业模块找到指定作业，点击“更多操作”-“修改时间”。
-  utter_answer_cantChangeHomeworkTime:
-  - text: 在作业开始之后，只可以修改截止时间；在截止时间之后，就不能修改了。
+  - text: 您好，在作业模块找到指定作业，点击“更多操作”-“修改时间”。在作业开始之后，只可以修改截止时间；在截止时间之后，就不能修改了。
   utter_answer_whatIsHomeworkType:
   - text: 您好，备课包中布置的三合一作业(课前的预习、课中的随堂测试、课后的复习)以及作业模块中布置的拍照作业属于对错作业；作业模块布置的普通作业同时具备设置为对错作业和分数作业的功能。
   utter_answer_mutualCorrectionStudentCnt:
@@ -206,7 +203,6 @@ actions:
 - utter_answer_homeworkSelectError
 - utter_answer_cantSelectPhotoHomework
 - utter_answer_howChangeHomeworkTime
-- utter_answer_cantChangeHomeworkTime
 - utter_answer_whatIsHomeworkType
 - utter_answer_mutualCorrectionStudentCnt
 - utter_answer_classTestChange

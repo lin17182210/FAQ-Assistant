@@ -104,10 +104,6 @@ stories:
   steps:
   - intent: howChangeHomeworkTime
   - action: utter_answer_howChangeHomeworkTime
-- story: cantChangeHomeworkTime
-  steps:
-  - intent: cantChangeHomeworkTime
-  - action: utter_answer_cantChangeHomeworkTime
 - story: whatIsHomeworkType
   steps:
   - intent: whatIsHomeworkType
