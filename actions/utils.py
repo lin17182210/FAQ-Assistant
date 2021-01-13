@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 import requests
 
-MY_KEY = '&key=584bfd5ea6b947fcb0144c5b87696757'  # EDIT HERE!
+MY_KEY = ''  # EDIT HERE!
 URL_API_WEATHER = 'https://devapi.qweather.com/v7/weather/3d'
 URL_API_GEO = 'https://geoapi.qweather.com/v2/city/'
 
