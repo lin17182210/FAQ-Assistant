@@ -2,28 +2,53 @@
 # -*- coding:utf-8 -*-
 import requests
 
-KEY = '4r9bergjetiv1tsd'  # API key
-UID = "U785B76FC9"  # 用户ID
-LOCATION = 'beijing'  # 所查询的位置，可以使用城市拼音、v3 ID、经纬度等
-API = 'https://api.seniverse.com/v3/weather/now.json'  # API URL，可替换为其他 URL
-UNIT = 'c'  # 单位
-LANGUAGE = 'zh-Hans'  # 查询结果的返回语言
+MY_KEY = ''  # EDIT HERE!
+URL_API_WEATHER = 'https://devapi.qweather.com/v7/weather/3d'
+URL_API_GEO = 'https://geoapi.qweather.com/v2/city/'
 
 
-def fetch_weather(location):
-    weather = requests.get(API, params={
-        'key': KEY,
-        'location': location,
-        'language': LANGUAGE,
-        'unit': UNIT
-    }, timeout=1)
-    return weather.json()
+def fetch_weather(city, key, slot):
+    url = URL_API_WEATHER + '?location=' + city + key
+    weather_data = requests.get(url).json()
+    result = weather_data.get("daily")[slot]
+    day = result.get("fxDate")
+    text_day = result.get("textDay")
+    temp_max = result.get("tempMax")
+    temp_min = result.get("tempMin")
+    text_night = result.get("textNight")
+    text_template = """[{}] 的天气情况为: 白天{}, 夜晚{}, 最高温度{}度, 最低温度{}度.""". \
+        format(day, text_day, text_night, temp_max, temp_min)
+    return text_template
+
+
+def fetch_city(city, key):
+    url_v2 = URL_API_GEO + 'lookup?location=' + city + key
+    city = requests.get(url_v2).json()['location'][0]
+    city_id = city['id']
+    district_name = city['name']
+    city_name = city['adm2']
+    province_name = city['adm1']
+    country_name = city['country']
+    lat = city['lat']
+    lon = city['lon']
+    return city_id, district_name, city_name, province_name, country_name, lat, lon
+
+
+def fetch(city, day, key=MY_KEY):
+    city_info = fetch_city(city, key)
+    city_id = city_info[0]
+    day_slot = {
+        "明天": 1,
+        "后天": 2
+    }
+    message = fetch_weather(city_id, key, day_slot.get(day, 0))
+    if city_info[2] == city_info[1]:
+        message = "".join([city_info[3], str(city_info[2]), '市', message])
+    else:
+        message = "".join([city_info[3], str(city_info[2]), '市', str(city_info[1]), '区', message])
+    return message
 
 
 if __name__ == '__main__':
-    address = "杭州"
-    result = fetch_weather(address)
-    data = result.get("results")[0]
-    addresses = data.get("location").get("name")
-    print(addresses)
-    print(data.get("now"))
+    CITY_INPUT = "杭州"
+    print(fetch(CITY_INPUT, "后天"))

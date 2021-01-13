@@ -9,49 +9,49 @@ stories:
 - story: happy path
   steps:
   - intent: greet
-  - action: utter_answer_greet
+  - action: utter_greet
   - intent: request_weather
   - action: weather_form
   - active_loop: weather_form
   - active_loop: null
   - intent: thanks
-  - action: utter_answer_thanks
+  - action: utter_thanks
 - story: unhappy path
   steps:
   - intent: greet
-  - action: utter_answer_greet
+  - action: utter_greet
   - intent: request_weather
   - action: weather_form
   - active_loop: weather_form
   - intent: base
-  - action: utter_answer_base
+  - action: utter_base
   - action: weather_form
   - active_loop: null
   - intent: thanks
-  - action: utter_answer_thanks
+  - action: utter_thanks
 - story: very unhappy path
   steps:
   - intent: greet
-  - action: utter_answer_greet
+  - action: utter_greet
   - intent: request_weather
   - action: weather_form
   - active_loop: weather_form
   - intent: base
-  - action: utter_answer_base
+  - action: utter_base
   - action: weather_form
   - intent: base
-  - action: utter_answer_base
+  - action: utter_base
   - action: weather_form
   - intent: deny
-  - action: utter_answer_deny
+  - action: utter_deny
   - action: weather_form
   - active_loop: null
   - intent: thanks
-  - action: utter_answer_thanks
+  - action: utter_thanks
 - story: stop but continue path
   steps:
   - intent: greet
-  - action: utter_answer_greet
+  - action: utter_greet
   - intent: request_weather
   - action: weather_form
   - active_loop: weather_form
@@ -61,11 +61,11 @@ stories:
   - action: weather_form
   - active_loop: null
   - intent: thanks
-  - action: utter_answer_thanks
+  - action: utter_thanks
 - story: stop and really stop path
   steps:
   - intent: greet
-  - action: utter_answer_greet
+  - action: utter_greet
   - intent: request_weather
   - action: weather_form
   - active_loop: weather_form
@@ -109,7 +109,7 @@ stories:
   - slot_was_set:
     - requested_slot: null
   - intent: thanks
-  - action: utter_answer_thanks
+  - action: utter_thanks
 - story: 天气/时间 + 地点 + 时间
   steps:
   - intent: request_weather
@@ -145,7 +145,7 @@ stories:
   - slot_was_set:
     - requested_slot: null
   - intent: thanks
-  - action: utter_answer_thanks
+  - action: utter_thanks
 - story: 天气/地点 + 时间 + 时间
   steps:
   - intent: request_weather
@@ -181,7 +181,7 @@ stories:
   - slot_was_set:
     - requested_slot: null
   - intent: thanks
-  - action: utter_answer_thanks
+  - action: utter_thanks
 - story: 天气/时间/地点 + 时间 + 地点
   steps:
   - intent: request_weather
@@ -234,4 +234,4 @@ stories:
   - slot_was_set:
     - requested_slot: null
   - intent: affirm
-  - action: utter_answer_affirm
+  - action: utter_affirm
