@@ -3,84 +3,22 @@ stories:
 - story: greet
   steps:
   - intent: greet
-  - action: utter_greet
+  - action: action_first
+  - intent: goodbye
+  - action: utter_goodbye
 - story: say affirm  with greet
   steps:
   - intent: greet
-  - action: utter_greet
-  - intent: affirm
-  - action: utter_affirm
-- story: say affirm
-  steps:
-  - intent: affirm
-  - action: utter_affirm
-- story: say no with greet
+  - action: action_first
+  - intent: thanks
+  - action: utter_thanks
+- story: greet and faq
   steps:
   - intent: greet
-  - action: utter_greet
-  - intent: deny
-  - action: utter_deny
-- story: say no
-  steps:
-  - intent: deny
-  - action: utter_deny
-- story: say goodbye
-  steps:
+  - action: action_first
+  - intent: courseCantComplete
+  - action: utter_courseCantComplete
+  - intent: thanks
+  - action: utter_thanks
   - intent: goodbye
   - action: utter_goodbye
-- story: thanks with greet
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: thanks
-  - action: utter_thanks
-- story: thanks
-  steps:
-  - intent: thanks
-  - action: utter_thanks
-- story: who are you with greet
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: whoareyou
-  - action: utter_whoareyou
-- story: who are you
-  steps:
-  - intent: whoareyou
-  - action: utter_whoareyou
-- story: who are you with greet
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: whoareyou
-  - action: utter_whoareyou
-- story: what to do
-  steps:
-  - intent: whattodo
-  - action: utter_whattodo
-- story: what to do with greet
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: whattodo
-  - action: utter_whattodo
-- story: base
-  steps:
-  - intent: base
-  - action: utter_base
-- story: greet with base
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: base
-  - action: utter_base
-- story: stop
-  steps:
-  - intent: stop
-  - action: utter_stop
-- story: greet with stop
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: stop
-  - action: utter_stop

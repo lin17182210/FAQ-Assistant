@@ -1,138 +1,122 @@
-#version: "2.0"
-#stories:
-#- story: beikeUpdateToSchoolTimetable
-#  steps:
-#  - intent: beikeUpdateToSchoolTimetable
-#  - action: utter_answer_beikeUpdateToSchoolTimetable
-#- story: lessonCantComplete
-#  steps:
-#  - intent: lessonCantComplete
-#  - action: utter_answer_lessonCantComplete
-#- story: examinationNoPermission
-#  steps:
-#  - intent: examinationNoPermission
-#  - action: utter_answer_examinationNoPermission
-#- story: lessonGarbledCode
-#  steps:
-#  - intent: lessonGarbledCode
-#  - action: utter_answer_lessonGarbledCode
-#- story: ipadNoVoicedOnClass
-#  steps:
-#  - intent: ipadNoVoicedOnClass
-#  - action: utter_answer_ipadNoVoicedOnClass
-#- story: lockScreen
-#  steps:
-#  - intent: lockScreen
-#  - action: utter_answer_lockScreen
-#- story: changeVoice
-#  steps:
-#  - intent: changeVoice
-#  - action: utter_answer_changeVoice
-#- story: authorizationFlipCourseware
-#  steps:
-#  - intent: authorizationFlipCourseware
-#  - action: utter_answer_authorizationFlipCourseware
-#- story: commentPaperNoExamination
-#  steps:
-#  - intent: commentPaperNoExamination
-#  - action: utter_answer_commentPaperNoExamination
-#- story: cantMoveDiscussionArea
-#  steps:
-#  - intent: cantMoveDiscussionArea
-#  - action: utter_answer_cantMoveDiscussionArea
-#- story: cantloadCourseware
-#  steps:
-#  - intent: cantloadCourseware
-#  - action: utter_answer_cantloadCourseware
-#- story: arrangeTemporarySchoolTimetable
-#  steps:
-#  - intent: arrangeTemporarySchoolTimetable
-#  - action: utter_answer_arrangeTemporarySchoolTimetable
-#- story: noEnterClassButton
-#  steps:
-#  - intent: noEnterClassButton
-#  - action: utter_answer_noEnterClassButton
-#- story: ipadCantEnterClass
-#  steps:
-#  - intent: ipadCantEnterClass
-#  - action: utter_answer_ipadCantEnterClass
-#- story: externalReleaseStudentVoice
-#  steps:
-#  - intent: externalReleaseStudentVoice
-#  - action: utter_answer_externalReleaseStudentVoice
-#- story: connectMicrophoneNoVoice
-#  steps:
-#  - intent: connectMicrophoneNoVoice
-#  - action: utter_answer_connectMicrophoneNoVoice
-#- story: examinationNoScore
-#  steps:
-#  - intent: examinationNoScore
-#  - action: utter_answer_examinationNoScore
-#- story: ipadEditQuestion
-#  steps:
-#  - intent: ipadEditQuestion
-#  - action: utter_answer_ipadEditQuestion
-#- story: microcourseCantUpload
-#  steps:
-#  - intent: microcourseCantUpload
-#  - action: utter_answer_microcourseCantUpload
-#- story: shareResourceEditCanUpdate
-#  steps:
-#  - intent: shareResourceEditCanUpdate
-#  - action: utter_answer_shareResourceEditCanUpdate
-#- story: whereMyCourseware
-#  steps:
-#  - intent: whereMyCourseware
-#  - action: utter_answer_whereMyCourseware
-#- story: microcourseFlashScreen
-#  steps:
-#  - intent: microcourseFlashScreen
-#  - action: utter_answer_microcourseFlashScreen
-#- story: homeworkSelectErrorStudent
-#  steps:
-#  - intent: homeworkSelectErrorStudent
-#  - action: utter_answer_homeworkSelectErrorStudent
-#- story: homeworkSelectError
-#  steps:
-#  - intent: homeworkSelectError
-#  - action: utter_answer_homeworkSelectError
-#- story: cantSelectPhotoHomework
-#  steps:
-#  - intent: cantSelectPhotoHomework
-#  - action: utter_answer_cantSelectPhotoHomework
-#- story: howChangeHomeworkTime
-#  steps:
-#  - intent: howChangeHomeworkTime
-#  - action: utter_answer_howChangeHomeworkTime
-#- story: whatIsHomeworkType
-#  steps:
-#  - intent: whatIsHomeworkType
-#  - action: utter_answer_whatIsHomeworkType
-#- story: mutualCorrectionStudentCnt
-#  steps:
-#  - intent: mutualCorrectionStudentCnt
-#  - action: utter_answer_mutualCorrectionStudentCnt
-#- story: classTestChange
-#  steps:
-#  - intent: classTestChange
-#  - action: utter_answer_classTestChange
-#- story: ipadPrintPhoneticSymbols
-#  steps:
-#  - intent: ipadPrintPhoneticSymbols
-#  - action: utter_answer_ipadPrintPhoneticSymbols
-#- story: tipFixFlash
-#  steps:
-#  - intent: tipFixFlash
-#  - action: utter_answer_tipFixFlash
-#- story: pageApplyFlower
-#  steps:
-#  - intent: pageApplyFlower
-#  - action: utter_answer_pageApplyFlower
-#- story: videotapeCanAccelerate
-#  steps:
-#  - intent: videotapeCanAccelerate
-#  - action: utter_answer_videotapeCanAccelerate
-#- story: cantChangeHeadPortrait
-#  steps:
-#  - intent: cantChangeHeadPortrait
-#  - action: utter_answer_cantChangeHeadPortrait
+version: "2.0"
+stories:
+- story: beikeUpdateToSchoolTimetable
+  steps:
+  - intent: beikeUpdateToSchoolTimetable
+  - action: utter_beikeUpdateToSchoolTimetable
+- story: courseCantComplete
+  steps:
+  - intent: courseCantComplete
+  - action: utter_courseCantComplete
+- story: examinationNoPermission
+  steps:
+  - intent: examinationNoPermission
+  - action: utter_examinationNoPermission
+- story: lessonGarbledCode
+  steps:
+  - intent: lessonGarbledCode
+  - action: utter_lessonGarbledCode
+- story: ipadNoVoicedOnClass
+  steps:
+  - intent: ipadNoVoicedOnClass
+  - action: utter_ipadNoVoicedOnClass
+- story: lockScreen
+  steps:
+  - intent: lockScreen
+  - action: utter_lockScreen
+- story: changeVoice
+  steps:
+  - intent: changeVoice
+  - action: utter_changeVoice
+- story: authorizationFlipCourseware
+  steps:
+  - intent: authorizationFlipCourseware
+  - action: utter_authorizationFlipCourseware
+- story: commentPaperNoExamination
+  steps:
+  - intent: commentPaperNoExamination
+  - action: utter_commentPaperNoExamination
+- story: cantMoveDiscussionArea
+  steps:
+  - intent: cantMoveDiscussionArea
+  - action: utter_cantMoveDiscussionArea
+- story: cantloadCourseware
+  steps:
+  - intent: cantloadCourseware
+  - action: utter_cantloadCourseware
+- story: noEnterClassButton
+  steps:
+  - intent: noEnterClassButton
+  - action: utter_noEnterClassButton
+- story: arrangeTemporarySchoolTimetable
+  steps:
+  - intent: arrangeTemporarySchoolTimetable
+  - action: utter_arrangeTemporarySchoolTimetable
+- story: ipadCantEnterClass
+  steps:
+  - intent: ipadCantEnterClass
+  - action: utter_ipadCantEnterClass
+- story: externalReleaseStudentVoice
+  steps:
+  - intent: externalReleaseStudentVoice
+  - action: utter_externalReleaseStudentVoice
+- story: connectMicrophoneNoVoice
+  steps:
+  - intent: connectMicrophoneNoVoice
+  - action: utter_connectMicrophoneNoVoice
+- story: examinationNoScore
+  steps:
+  - intent: examinationNoScore
+  - action: utter_examinationNoScore
+- story: ipadEditQuestion
+  steps:
+  - intent: ipadEditQuestion
+  - action: utter_ipadEditQuestion
+- story: microcourseCantUpload
+  steps:
+  - intent: microcourseCantUpload
+  - action: utter_microcourseCantUpload
+- story: whereMyCourseware
+  steps:
+  - intent: whereMyCourseware
+  - action: utter_whereMyCourseware
+- story: microcourseFlashScreen
+  steps:
+  - intent: microcourseFlashScreen
+  - action: utter_microcourseFlashScreen
+- story: homeworkSelectErrorStudent
+  steps:
+  - intent: homeworkSelectErrorStudent
+  - action: utter_homeworkSelectErrorStudent
+- story: homeworkSelectError
+  steps:
+  - intent: homeworkSelectError
+  - action: utter_homeworkSelectError
+- story: cantSelectPhotoHomework
+  steps:
+  - intent: cantSelectPhotoHomework
+  - action: utter_cantSelectPhotoHomework
+- story: howChangeHomeworkTime
+  steps:
+  - intent: howChangeHomeworkTime
+  - action: utter_howChangeHomeworkTime
+- story: whatIsHomeworkType
+  steps:
+  - intent: whatIsHomeworkType
+  - action: utter_whatIsHomeworkType
+- story: ipadPrintPhoneticSymbols
+  steps:
+  - intent: ipadPrintPhoneticSymbols
+  - action: utter_ipadPrintPhoneticSymbols
+- story: tipFixFlash
+  steps:
+  - intent: tipFixFlash
+  - action: utter_tipFixFlash
+- story: videotapeCanAccelerate
+  steps:
+  - intent: videotapeCanAccelerate
+  - action: utter_videotapeCanAccelerate
+- story: cantChangeHeadPortrait
+  steps:
+  - intent: cantChangeHeadPortrait
+  - action: utter_cantChangeHeadPortrait

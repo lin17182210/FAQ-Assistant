@@ -1,11 +1,11 @@
-version: "2.0"
-
-rules:
-  - rule: fallback rule
-    steps:
-    - intent: nlu_fallback
-    - action: utter_fallback
-  - rule: respond to FAQs
-    steps:
-      - intent: faq
-      - action: utter_faq
+#version: "2.0"
+#
+#rules:
+#  - rule: fallback rule
+#    steps:
+#    - intent: nlu_fallback
+#    - action: utter_fallback
+#  - rule: respond to FAQs
+#    steps:
+#      - intent: faq
+#      - action: utter_faq
