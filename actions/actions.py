@@ -64,7 +64,7 @@ class ActionFirst(Action):
                                     5.如何进行锁屏<br/>\
                                     6.学生按时考试但是没有成绩<br/>\
                                     7.为什么我的试卷讲评没有相关考试"))
-        return []
+        return [AllSlotsReset()]
 
 
 class ActionFallBack(Action):
@@ -78,13 +78,31 @@ class ActionFallBack(Action):
         tracker: Tracker,
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(template="utter_default")
-        dispatcher.utter_message(md("您可以这样向我提问: "
-                                    "<br/>1.给学生授权后能进行课件翻页吗<br/>\
-                                    2.无法移动讨论区<br/>\
-                                    3.如何排临时课表<br/>\
-                                    4.直播上课连麦没有声音<br/>\
-                                    5.如何进行锁屏<br/>\
-                                    6.学生按时考试但是没有成绩<br/>\
-                                    7.为什么我的试卷讲评没有相关考试"))
-        return []
+        AllSlotsReset()
+        entities = tracker.latest_message.get("entities", [])
+        if len(entities) > 0:
+            button_list = []
+            for entity in entities:
+                slot = entity.get("entity")
+                value = entity.get("value")
+                button_list.append({"title": slot, "payload": value})
+            dispatcher.utter_message(text="逐步确认信息....")
+            dispatcher.utter_message(buttons=button_list)
+        # slots = current_state.get("slots")
+        # button_list = []
+        # for k, v in slots.items():
+        #     if v is not None:
+        #         button_list.append({"title": k, "payload": v})
+        # if len(button_list) > 0:
+        #     dispatcher.utter_message(text="逐步确认信息....")
+        #     dispatcher.utter_message(buttons=button_list)
+        else:
+            dispatcher.utter_message(md("您可以这样向我提问: "
+                                        "<br/>1.给学生授权后能进行课件翻页吗<br/>\
+                                        2.无法移动讨论区<br/>\
+                                        3.如何排临时课表<br/>\
+                                        4.直播上课连麦没有声音<br/>\
+                                        5.如何进行锁屏<br/>\
+                                        6.学生按时考试但是没有成绩<br/>\
+                                        7.为什么我的试卷讲评没有相关考试"))
+        return [AllSlotsReset()]

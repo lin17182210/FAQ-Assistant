@@ -1,11 +1,123 @@
-#version: "2.0"
-#
-#rules:
-#  - rule: fallback rule
-#    steps:
-#    - intent: nlu_fallback
-#    - action: utter_fallback
-#  - rule: respond to FAQs
-#    steps:
-#      - intent: faq
-#      - action: utter_faq
+version: "2.0"
+
+rules:
+  - rule: beikeUpdateToSchoolTimetable
+    steps:
+    - intent: beikeUpdateToSchoolTimetable
+    - action: utter_beikeUpdateToSchoolTimetable
+  - rule: courseCantComplete
+    steps:
+    - intent: courseCantComplete
+    - action: utter_courseCantComplete
+  - rule: examinationNoPermission
+    steps:
+    - intent: examinationNoPermission
+    - action: utter_examinationNoPermission
+  - rule: lessonGarbledCode
+    steps:
+    - intent: lessonGarbledCode
+    - action: utter_lessonGarbledCode
+  - rule: ipadNoVoicedOnClass
+    steps:
+    - intent: ipadNoVoicedOnClass
+    - action: utter_ipadNoVoicedOnClass
+  - rule: lockScreen
+    steps:
+    - intent: lockScreen
+    - action: utter_lockScreen
+  - rule: changeVoice
+    steps:
+    - intent: changeVoice
+    - action: utter_changeVoice
+  - rule: authorizationFlipCourseware
+    steps:
+    - intent: authorizationFlipCourseware
+    - action: utter_authorizationFlipCourseware
+  - rule: commentPaperNoExamination
+    steps:
+    - intent: commentPaperNoExamination
+    - action: utter_commentPaperNoExamination
+  - rule: cantMoveDiscussionArea
+    steps:
+    - intent: cantMoveDiscussionArea
+    - action: utter_cantMoveDiscussionArea
+  - rule: cantloadCourseware
+    steps:
+    - intent: cantloadCourseware
+    - action: utter_cantloadCourseware
+  - rule: noEnterClassButton
+    steps:
+    - intent: noEnterClassButton
+    - action: utter_noEnterClassButton
+  - rule: arrangeTemporarySchoolTimetable
+    steps:
+    - intent: arrangeTemporarySchoolTimetable
+    - action: utter_arrangeTemporarySchoolTimetable
+  - rule: ipadCantEnterClass
+    steps:
+    - intent: ipadCantEnterClass
+    - action: utter_ipadCantEnterClass
+  - rule: externalReleaseStudentVoice
+    steps:
+    - intent: externalReleaseStudentVoice
+    - action: utter_externalReleaseStudentVoice
+  - rule: connectMicrophoneNoVoice
+    steps:
+    - intent: connectMicrophoneNoVoice
+    - action: utter_connectMicrophoneNoVoice
+  - rule: examinationNoScore
+    steps:
+    - intent: examinationNoScore
+    - action: utter_examinationNoScore
+  - rule: ipadEditQuestion
+    steps:
+    - intent: ipadEditQuestion
+    - action: utter_ipadEditQuestion
+  - rule: microcourseCantUpload
+    steps:
+    - intent: microcourseCantUpload
+    - action: utter_microcourseCantUpload
+  - rule: whereMyCourseware
+    steps:
+    - intent: whereMyCourseware
+    - action: utter_whereMyCourseware
+  - rule: microcourseFlashScreen
+    steps:
+    - intent: microcourseFlashScreen
+    - action: utter_microcourseFlashScreen
+  - rule: homeworkSelectErrorStudent
+    steps:
+    - intent: homeworkSelectErrorStudent
+    - action: utter_homeworkSelectErrorStudent
+  - rule: homeworkSelectError
+    steps:
+    - intent: homeworkSelectError
+    - action: utter_homeworkSelectError
+  - rule: cantSelectPhotoHomework
+    steps:
+    - intent: cantSelectPhotoHomework
+    - action: utter_cantSelectPhotoHomework
+  - rule: howChangeHomeworkTime
+    steps:
+    - intent: howChangeHomeworkTime
+    - action: utter_howChangeHomeworkTime
+  - rule: whatIsHomeworkType
+    steps:
+    - intent: whatIsHomeworkType
+    - action: utter_whatIsHomeworkType
+  - rule: ipadPrintPhoneticSymbols
+    steps:
+    - intent: ipadPrintPhoneticSymbols
+    - action: utter_ipadPrintPhoneticSymbols
+  - rule: tipFixFlash
+    steps:
+    - intent: tipFixFlash
+    - action: utter_tipFixFlash
+  - rule: videotapeCanAccelerate
+    steps:
+    - intent: videotapeCanAccelerate
+    - action: utter_videotapeCanAccelerate
+  - rule: cantChangeHeadPortrait
+    steps:
+    - intent: cantChangeHeadPortrait
+    - action: utter_cantChangeHeadPortrait

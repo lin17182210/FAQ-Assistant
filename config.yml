@@ -16,6 +16,9 @@ pipeline:
      epochs: 200
    - name: EntitySynonymMapper
    - name: RegexEntityExtractor
+   - name: FallbackClassifier
+     threshold: 0.5
+     ambiguity_threshold: 0.01
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
@@ -32,6 +35,5 @@ policies:
     max_history: 4
     epochs: 200
   - name: RulePolicy
-    core_fallback_threshold: 0.3
+    core_fallback_threshold: 0.6
     core_fallback_action_name: "action_fallback"
-    enable_fallback_prediction: True

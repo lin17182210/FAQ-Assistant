@@ -37,10 +37,7 @@ intents:
 - tipFixFlash
 - videotapeCanAccelerate
 - cantChangeHeadPortrait
-- request_weather
 entities:
-- address
-- date_time
 - beike
 - class_tabel
 - course
@@ -97,13 +94,6 @@ slots:
     type: text
   head_pic:
     type: text
-  address:
-    type: text
-  date_time:
-    type: text
-  requested_slot:
-    type: text
-    influence_conversation: false
 responses:
   utter_goodbye:
   - text: 再见
@@ -118,12 +108,6 @@ responses:
   - text: 嗯呢。不用客气~
   - text: 这是我应该做的，主人~
   - text: 嗯嗯，合作愉快！
-  utter_ask_continue:
-  - text: 还要继续查吗？
-  utter_ask_date_time:
-  - text: 请问您要查询哪一天的天气？
-  utter_ask_address:
-  - text: 请问您要查下哪里的天气？
   utter_default:
   - text: 我没能理解到这句话的意思，你可以换种说法吗？
   - text: 我没有明白你说的意思，你可以描述的更加仔细一点吗?
@@ -188,8 +172,6 @@ responses:
   utter_cantChangeHeadPortrait:
   - text: 您好，学校设置了更换头像的次数，更换头像是有限的。
 actions:
-- weather_form
 - action_fallback
 - action_first
-forms:
-  weather_form: {}
+
