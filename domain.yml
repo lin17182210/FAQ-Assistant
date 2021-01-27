@@ -3,7 +3,6 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- inform
 - greet
 - goodbye
 - thanks
@@ -38,61 +37,42 @@ intents:
 - videotapeCanAccelerate
 - cantChangeHeadPortrait
 entities:
-- beike
-- class_tabel
+- object
 - course
-- exam
-- lesson
-- garbled_code
-- ipad
-- screen
-- voice
-- resouce
-- exam_paper
-- discussion
-- button
-- micro_phone
+- endpoint
+- resource
+- function
+- tools
+- formats
 - score
 - homework
-- symbols
-- vido
-- head_pic
+- data_time
+- unnormal
+- operation
 slots:
-  beike:
-    type: text
-  class_tabel:
+  object:
     type: text
   course:
     type: text
-  exam:
+  endpoint:
     type: text
-  lesson:
+  resource:
     type: text
-  garbled_code:
+  function:
     type: text
-  ipad:
+  tools:
     type: text
-  screen:
-    type: text
-  voice:
-    type: text
-  resouce:
-    type: text
-  exam_paper:
-    type: text
-  discussion:
-    type: text
-  button:
+  formats:
     type: text
   score:
     type: text
   homework:
     type: text
-  symbols:
+  data_time:
     type: text
-  vido:
+  unnormal:
     type: text
-  head_pic:
+  operation:
     type: text
 responses:
   utter_goodbye:
@@ -103,7 +83,7 @@ responses:
   - text: 嗯嗯，下次需要时随时记得我哟~
   - text: see you!
   utter_whoareyou:
-  - text: 您好！我是您的AI智能助理！目前支持天气查询和常见FAQ问题解答
+  - text: 您好！我是您的AI智能助理！目前支持常见FAQ问题解答
   utter_thanks:
   - text: 嗯呢。不用客气~
   - text: 这是我应该做的，主人~

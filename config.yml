@@ -17,8 +17,8 @@ pipeline:
    - name: EntitySynonymMapper
    - name: RegexEntityExtractor
    - name: FallbackClassifier
-     threshold: 0.5
-     ambiguity_threshold: 0.01
+     threshold: 0.7
+     ambiguity_threshold: 0.1
 
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/

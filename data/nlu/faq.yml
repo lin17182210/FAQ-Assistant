@@ -3,8 +3,11 @@ version: "2.0"
 nlu:
 - intent: beikeUpdateToSchoolTimetable
   examples: |
-    - [备课]{"entity":"beike"}模块更新会同步到[课表]{"entity":"class_tabel"}吗？
-    - 更新[备课]{"entity":"beike"}会同步至[课表]{"entity":"class_tabel"}吗？
+    - [更新]{"entity":"operation"}了[备课]{"entity":"function"}模块是否会同步至[课表]{"entity":"resource"}
+    - [备课]{"entity":"function"}模块[更新]{"entity":"operation"}会同步到[课表]{"entity":"resource"}吗？
+    - [更新]{"entity":"operation"}[备课]{"entity":"function"}会同步至[课表]{"entity":"resource"}吗？
+    - [修改]{"entity":"operation"}[备课]{"entity":"function"}会同步至[课表]{"entity":"resource"}吗？
+    - [编辑]{"entity":"operation"}[备课]{"entity":"function"}会同步至[课表]{"entity":"resource"}吗？
 - intent: courseCantComplete
   examples: |
     - [点播课]{"entity":"course"}章节无法完成
@@ -13,181 +16,210 @@ nlu:
     - [点播课]{"entity":"course"}章节完成不了
 - intent: examinationNoPermission
   examples: |
-    - 发起[考试]{"entity":"exam"}，没有权限查看
-    - 怎么查看发起的[考试]{"entity":"exam"}
-    - 没权限查看[考试]{"entity":"exam"}
+    - 如何[浏览]{"entity":"operation"}发起的[考试]{"entity":"function"}
+    - 发起[考试]{"entity":"function"}，没有权限[查看]{"entity":"operation"}
+    - 怎么[点]{"entity":"operation"}开发起的[考试]{"entity":"function"}
+    - 没权限[查看]{"entity":"operation"}[考试]{"entity":"function"}
+    - [点]{"entity":"operation"}不开发起的[考试]{"entity":"function"}
+    - [看]{"entity":"operation"}不了发起的[考试]{"entity":"function"}
 - intent: lessonGarbledCode
   examples: |
-    - [课堂]{"entity":"lesson"}中出现[乱码]{"entity":"garbled_code"}
-    - [上课]{"entity":"lesson"}[乱码]{"entity":"garbled_code"}
-    - [乱码]{"entity":"garbled_code"}
-    - [课中]{"entity":"lesson"}[乱码]{"entity":"garbled_code"}
+    - [课堂]{"entity":"course"}中出现[乱码]{"entity":"unnormal"}
+    - [上课]{"entity":"course"}[乱码]{"entity":"unnormal"}
+    - [乱码]{"entity":"unnormal"}
+    - [课中]{"entity":"course"}[乱码]{"entity":"unnormal"}
 - intent: ipadNoVoicedOnClass
   examples: |
-    - [平板]{"entity":"ipad"}[上课]{"entity":"lesson"}学生听不到我的[声音]{"entity":"voice"}
-    - [平板]{"entity":"ipad"}学生没[声音]{"entity":"voice"}
-    - [平板]{"entity":"ipad"}[课上]{"entity":"lesson"}学生听不到
+    - [平板]{"entity":"endpoint"}[上课]{"entity":"course"}[学生]{"entity":"object"}听不到我的[声音]{"entity":"formats"}
+    - [平板]{"entity":"endpoint"}[学生]{"entity":"object"}没[声音]{"entity":"formats"}
+    - [平板]{"entity":"endpoint"}[课上]{"entity":"course"}[学生]{"entity":"object"}听不到
+    - [学生上课]{"entity":"object"}听不到[老师]{"entity":"object"}的[声音]{"entity":"formats"}
+    - [学生上课]{"entity":"object"}听不到[老师]{"entity":"object"}的[声音]{"entity":"formats"}
+    - [学生]{"entity":"object"}听不到[老师]{"entity":"object"}的[声音]{"entity":"formats"}
 - intent: lockScreen
   examples: |
-    - 如何进行[锁屏]{"entity":"screen"}
-    - 锁定[屏幕]{"entity":"screen"}
-    - [屏幕]{"entity":"screen"}锁定
+    - 如何进行[锁屏]{"entity":"tools"}
+    - [锁定]{"entity":"operation"}[屏幕]{"entity":"tools"}
+    - [屏幕]{"entity":"tools"}[锁定]{"entity":"operation"}
 - intent: changeVoice
   examples: |
-    - 如何[变声]{"entity":"voice"}
-    - [变声]{"entity":"voice"}
-    - 改变[声音]{"entity":"voice"}
+    - 如何[变声]{"entity":"formats"}
+    - [变声]{"entity":"formats"}
+    - [改变]{"entity":"operation"}[声音]{"entity":"formats"}
 - intent: authorizationFlipCourseware
   examples: |
-    - 给学生授权后能进行[课件]{"entity":"resouce"}翻页吗？
-    - [课件]{"entity":"resouce"}翻页
-    - 可以翻页[课件]{"entity":"resouce"}吗？
+    - 给[学生]{"entity":"object"}授权后能进行[课件]{"entity":"resource"}[翻页]{"entity":"operation"}吗？
+    - [课件]{"entity":"resource"}[翻页]{"entity":"operation"}
+    - 可以[翻页]{"entity":"operation"}[课件]{"entity":"resource"}吗？
+    - 给[学生]{"entity":"object"}授权后,[课件]{"entity":"resource"}是否可以[翻页]{"entity":"operation"}
 - intent: commentPaperNoExamination
   examples: |
-    - 为什么我的[试卷讲评]{"entity":"exam_paper"}没有相关[考试]{"entity":"exam"}
-    - [考试讲评]{"entity":"exam_paper"}没有[考试]{"entity":"exam"}
-    - [考试]{"entity":"exam"}没有关联到[考试讲评]{"entity":"exam_paper"}
+    - 为什么我的[试卷]{"entity":"resource"}[讲评]{"entity":"operation"}没有相关[考试]{"entity":"function"}
+    - [考试]{"entity":"function"}[讲评]{"entity":"operation"}没有[考试]{"entity":"function"}
+    - [考试]{"entity":"function"}没有关联到[考试]{"entity":"function"}[讲评]{"entity":"operation"}
 - intent: cantMoveDiscussionArea
   examples: |
-    - 无法移动[讨论区]{"entity":"discussion"}
-    - 关掉[讨论区]{"entity":"discussion"}
-    - 拖动[讨论区]{"entity":"discussion"}
+    - 无法移动[讨论区]{"entity":"function"}
+    - 关掉[讨论区]{"entity":"function"}
+    - 拖动[讨论区]{"entity":"function"}
 - intent: cantloadCourseware
   examples: |
-    - [课件]{"entity":"resouce"}加载不出来
-    - 无法加载[课件]{"entity":"resouce"}
-    - [课件]{"entity":"resouce"}一直显示在加载中
-    - [课件]{"entity":"resouce"}加载中
+    - [课件]{"entity":"resource"}[加载]{"entity":"operation"}不出来
+    - 无法[加载]{"entity":"operation"}[课件]{"entity":"resource"}
+    - [课件]{"entity":"resource"}一直显示在[加载]{"entity":"operation"}中
+    - [课件]{"entity":"resource"}[加载]{"entity":"operation"}中
+    - [平板]{"entity":"endpoint"}上[课件]{"entity":"resource"}[加载]{"entity":"operation"}不出来
 - intent: noEnterClassButton
   examples: |
-    - [平板]{"entity":"ipad"}进入[课堂]{"entity":"lesson"}[按钮]{"entity":"button"}消失
-    - 没有进入[课堂]{"entity":"lesson"}的[按钮]{"entity":"button"}
-    - [平板]{"entity":"ipad"}进入不了[课堂]{"entity":"lesson"}
-    - 进入课堂的[按键]{"entity":"button"}不见了
+    - [平板]{"entity":"endpoint"}进入[课堂]{"entity":"course"}的[按钮]{"entity":"tools"}消失
+    - 没有进入[课堂]{"entity":"course"}的[按钮]{"entity":"tools"}
+    - [平板]{"entity":"endpoint"}进入[课堂]{"entity":"course"}的[按钮]{"entity":"tools"}不见了
+    - [ipad]{"entity":"endpoint"}进入[课堂]{"entity":"course"}的[按钮]{"entity":"tools"}在哪里
+    - 进入课堂的[按键]{"entity":"tools"}不见了
 - intent: arrangeTemporarySchoolTimetable
   examples: |
-    - 如何排[临时课表]{"entity":"class_tabel"}
-    - [临时课表]{"entity":"class_tabel"}怎么排
-    - [临时课表]{"entity":"class_tabel"}
+    - 如何排[临时课表]{"entity":"resource"}
+    - [临时课表]{"entity":"resource"}怎么排
+    - [临时课表]{"entity":"resource"}
 - intent: ipadCantEnterClass
   examples: |
-    - [平板]{"entity":"ipad"}进不了[课堂]{"entity":"lesson"}
-    - [平板]{"entity":"ipad"}不能进入教室[上课]{"entity":"lesson"}
-    - [平板]{"entity":"ipad"}不能进到[课堂]{"entity":"lesson"}
-    - [课堂]{"entity":"lesson"}进不了
+    - [平板]{"entity":"endpoint"}无法进入[课堂]{"entity":"course"}
+    - [平板]{"entity":"endpoint"}进不了[课堂]{"entity":"course"}
+    - [平板]{"entity":"endpoint"}不能进入教室[上课]{"entity":"course"}
+    - [ipad]{"entity":"endpoint"}不能进到[课堂]{"entity":"course"}
+    - [课堂]{"entity":"course"}进不了
+    - [平板]{"entity":"endpoint"}无法进入[课堂]{"entity":"course"}
 - intent: externalReleaseStudentVoice
   examples: |
-    - 学生[声音]{"entity":"voice"}怎么外放
-    - 外放学生[声音]{"entity":"voice"}
-    - 外发[声音]{"entity":"voice"}
-    - [声音]{"entity":"voice"}外发
+    - 如何外放[学生]{"entity":"object"}的[声音]{"entity":"formats"}
+    - [学生]{"entity":"object"}[声音]{"entity":"formats"}怎么外放
+    - 外放[学生]{"entity":"object"}[声音]{"entity":"formats"}
+    - 外发[声音]{"entity":"formats"}
+    - [声音]{"entity":"formats"}外发
 - intent: connectMicrophoneNoVoice
   examples: |
-    - 直播[上课]{"entity":"lesson"}[连麦]{"entity":"micro_phone"}没有[声音]{"entity":"voice"}
-    - [连麦]{"entity":"micro_phone"}没有[声音]{"entity":"voice"}
-    - 听不到对方[声音]{"entity":"voice"}
+    - [直播上课]{"entity":"course"}[连麦]{"entity":"tools"}没有[声音]{"entity":"formats"}
+    - [连麦]{"entity":"tools"}没有[声音]{"entity":"formats"}
+    - 听不到对方[声音]{"entity":"formats"}
+    - [耳麦]{"entity":"tools"}没有[声音]{"entity":"formats"}
+    - [耳机]{"entity":"tools"}听不到[声音]{"entity":"formats"}
+    - [麦克风]{"entity":"tools"}没有[声音]{"entity":"formats"}
 - intent: examinationNoScore
   examples: |
-    - 学生按时[考试]{"entity":"exam"}但是没有[成绩]{"entity":"score"}？
-    - [考试]{"entity":"exam"}后没有[成绩]{"entity":"score"}
+    - [学生]{"entity":"object"}按时[考试]{"entity":"function"}但是没有[成绩]{"entity":"score"}？
+    - [考试]{"entity":"function"}后没有[成绩]{"entity":"score"}
 - intent: ipadEditQuestion
   examples: |
-    - [平板]{"entity":"ipad"}可以编辑[题目]{"entity":"resouce"}吗？
-    - [平板]{"entity":"ipad"}[题目]{"entity":"resouce"}编辑
-    - [平板]{"entity":"ipad"}可以编辑[资源]{"entity":"resouce"}吗
-    - [平板]{"entity":"ipad"}[习题]{"entity":"resouce"}编辑
+    - [平板]{"entity":"endpoint"}可以[编辑]{"entity":"operation"}[题目]{"entity":"resource"}吗？
+    - [平板]{"entity":"endpoint"}[题目]{"entity":"resource"}[编辑]{"entity":"operation"}
+    - [ipad]{"entity":"endpoint"}可以[修改]{"entity":"operation"}[资源]{"entity":"resource"}吗
+    - [平板]{"entity":"endpoint"}可以[编辑]{"entity":"operation"}[资源]{"entity":"resource"}吗
+    - [ipad]{"entity":"endpoint"}可以[更新]{"entity":"operation"}[试卷]{"entity":"resource"}吗
+    - [平板]{"entity":"endpoint"}[习题]{"entity":"resource"}[编辑]{"entity":"operation"}
 - intent: microcourseCantUpload
   examples: |
-    - [微课]{"entity":"resouce"}无法上传
-    - 上传[微课]{"entity":"resouce"}不成功
-    - 无法上传[微课]{"entity":"resouce"}
-    - [微课]{"entity":"resouce"}上传失败
+    - [微课]{"entity":"resource"}无法[上传]{"entity":"operation"}
+    - [上传]{"entity":"operation"}[微课]{"entity":"resource"}不成功
+    - 无法[上传]{"entity":"operation"}[微课]{"entity":"resource"}
+    - [微课]{"entity":"resource"}[上传]{"entity":"operation"}失败
 - intent: whereMyCourseware
   examples: |
-    - 上传[课件]{"entity":"resouce"}后在我的资源里找不到？
-    - 我的[课件]{"entity":"resouce"}在哪里？
-    - 我的[课件]{"entity":"resouce"}不见了
+    - [上传]{"entity":"operation"}[课件]{"entity":"resource"}后在我的资源里找不到？
+    - 我的[课件]{"entity":"resource"}在哪里？
+    - [课件]{"entity":"resource"}[上传]{"entity":"operation"}后在哪里？
+    - 我的[课件]{"entity":"resource"}不见了
 - intent: microcourseFlashScreen
   examples: |
-    - [微课]{"entity":"resouce"}录制过程中出现闪退怎么办？
-    - [微课]{"entity":"resouce"}录制闪退
-    - 录制[微课]{"entity":"resouce"}闪退
+    - [微课]{"entity":"resource"}[录制]{"entity":"operation"}过程中出现[闪退]{"entity":"unnormal"}怎么办？
+    - [微课]{"entity":"resource"}[录制]{"entity":"operation"}[闪退]{"entity":"unnormal"}
+    - [录制]{"entity":"operation"}[微课]{"entity":"resource"}[闪退]{"entity":"unnormal"}
 - intent: homeworkSelectErrorStudent
   examples: |
-    - [作业]{"entity":"homework"}选择的学生人数不正确
-    - [作业]{"entity":"homework"}学生选择错了
-    - 修改[作业]{"entity":"homework"}的学生
+    - [修改]{"entity":"operation"}[作业]{"entity":"homework"}选择的[学生]{"entity":"object"}
+    - [作业]{"entity":"homework"}选择的[学生]{"entity":"object"}人数不正确
+    - [作业]{"entity":"homework"}[学生]{"entity":"object"}选择错了
+    - [修改]{"entity":"operation"}[作业]{"entity":"homework"}的[学生]{"entity":"object"}
 - intent: homeworkSelectError
   examples: |
-    - [作业]{"entity":"homework"}布置错误怎么办
-    - 修改布置过的[作业]{"entity":"homework"}
-    - 修正[作业]{"entity":"homework"}
-    - [作业]{"entity":"homework"}作废
+    - [取消]{"entity":"operation"}[作业]{"entity":"homework"}
+    - [作业]{"entity":"homework"}[布置]{"entity":"operation"}错误怎么办
+    - [修改]{"entity":"operation"}[布置]{"entity":"operation"}过的[作业]{"entity":"homework"}
+    - [删除]{"entity":"operation"}[作业]{"entity":"homework"}
+    - [作业]{"entity":"homework"}[作废]{"entity":"operation"}
 - intent: cantSelectPhotoHomework
   examples: |
-    - 无法布置[拍照作业]{"entity":"homework"}
-    - 怎么布置[拍照作业]{"entity":"homework"}？
-    - [拍照作业]{"entity":"homework"}
+    - [布置]{"entity":"operation"}[拍照作业]{"entity":"homework"}
+    - 如何[布置]{"entity":"operation"}[拍照作业]{"entity":"homework"}
+    - 无法[布置]{"entity":"operation"}[拍照作业]{"entity":"homework"}
+    - 怎么[布置]{"entity":"operation"}[拍照作业]{"entity":"homework"}？
+    - [拍照作业]{"entity":"homework"}怎么[布置]{"entity":"operation"}
 - intent: howChangeHomeworkTime
   examples: |
-    - [作业]{"entity":"homework"}怎么修改时间
-    - 怎么修改[作业]{"entity":"homework"}的时间
-    - 无法修改[作业]{"entity":"homework"}时间
+    - [作业]{"entity":"homework"}怎么[修改]{"entity":"operation"}[时间]{"entity":"data_time"}
+    - 怎么[修改]{"entity":"operation"}[作业]{"entity":"homework"}的[时间]{"entity":"data_time"}
+    - 无法[修改]{"entity":"operation"}[作业]{"entity":"homework"}[时间]{"entity":"data_time"}
 - intent: whatIsHomeworkType
   examples: |
+    - [作业]{"entity":"homework"}类型
+    - [作业]{"entity":"homework"}分类
+    - [作业]{"entity":"homework"}有哪些类型
     - [对错作业]{"entity":"homework"}和[分数作业]{"entity":"homework"}有哪些
     - [作业]{"entity":"homework"}类型有哪些
     - [对错作业]{"entity":"homework"}是什么
     - [分数作业]{"entity":"homework"}是什么
 - intent: ipadPrintPhoneticSymbols
   examples: |
-    - [平板]{"entity":"ipad"}打出[音标]{"entity":"symbols"}
-    - 怎么打[音标]{"entity":"symbols"}
-    - [音标]{"entity":"symbols"}
+    - [平板]{"entity":"endpoint"}打出[音标]{"entity":"formats"}
+    - [平板]{"entity":"endpoint"}如何打出[音标]{"entity":"formats"}
+    - 怎么打[音标]{"entity":"formats"}
+    - [音标]{"entity":"formats"}在[ipad]{"entity":"endpoint"}上怎么打出来
 - intent: tipFixFlash
   examples: |
-    - 进入[课堂]{"entity":"lesson"}总提示flash需要修复
-    - 修复flash
-    - flash怎么修复
+    - 进入[课堂]{"entity":"course"}总提示[flash]{"entity":"tools"}需要[修复]{"entity":"operation"}
+    - [修复]{"entity":"operation"}[flash]{"entity":"tools"}
+    - [flash]{"entity":"tools"}怎么[修复]{"entity":"operation"}
 - intent: videotapeCanAccelerate
   examples: |
-    - [录像]{"entity":"vido"}可以倍速播放吗
-    - 快速播放[录像]{"entity":"vido"}
-    - [录像]{"entity":"vido"}加速
+    - [录像]{"entity":"formats"}可以倍速播放吗
+    - 快速播放[录像]{"entity":"formats"}
+    - [录像]{"entity":"formats"}加速
 - intent: cantChangeHeadPortrait
   examples: |
-    - 为什么换不了[头像]{"entity":"head_pic"}
-    - 不能换[头像]{"entity":"head_pic"}
-    - 修改[头像]{"entity":"head_pic"}
-    - 替换[头像]{"entity":"head_pic"}
+    - 无法[修改]{"entity":"operation"}[头像]{"entity":"formats"}
+    - 为什么[换]{"entity":"operation"}不了[头像]{"entity":"formats"}
+    - 不能[换]{"entity":"operation"}[头像]{"entity":"formats"}
+    - [修改]{"entity":"operation"}[头像]{"entity":"formats"}
+    - [替换]{"entity":"operation"}[头像]{"entity":"formats"}
 
-- synonym: 讲评
+- synonym: 更新
   examples: |
-    - 考试讲评
-    - 试卷讲评
-- synonym: 课堂
+    - 编辑
+    - 修改
+    - 修正
+    - 修订
+    - 修复
+    - 改变
+    - 更改
+    - 替换
+    - 换
+- synonym: 查看
   examples: |
-    - 上课
-    - 课中
-    - 课上
-- synonym: 课表
+    - 看
+    - 观看
+    - 浏览
+    - 点开
+    - 点
+- synonym: 删除
   examples: |
-    - 临时课表
-- synonym: 按钮
-  examples: |
-    - 按键
-- synonym: 取消
-  examples: |
-    - 删除
     - 作废
-- lookup: 资源
+    - 取消
+- synonym: 耳麦
   examples: |
-    - 课件
-    - 题目
-    - 习题
-    - 微课
-- lookup: 作业
+    - 耳机
+    - 麦克风
+- synonym: 教师
   examples: |
-    - 拍照作业
-    - 分数作业
-    - 对错作业
+    - 老师
+- synonym: 平板
+  examples: |
+    - ipad
