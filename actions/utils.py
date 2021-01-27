@@ -1,13 +1,14 @@
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
+from typing import Text, List
 import requests
 
-MY_KEY = ''  # EDIT HERE!
+MY_KEY = '&key=584bfd5ea6b947fcb0144c5b87696757'  # EDIT HERE!
 URL_API_WEATHER = 'https://devapi.qweather.com/v7/weather/3d'
 URL_API_GEO = 'https://geoapi.qweather.com/v2/city/'
 
 
-def fetch_weather(city, key, slot):
+def fetch_weather(city: Text, key: Text, slot: int) -> Text:
     url = URL_API_WEATHER + '?location=' + city + key
     weather_data = requests.get(url).json()
     result = weather_data.get("daily")[slot]
@@ -21,7 +22,7 @@ def fetch_weather(city, key, slot):
     return text_template
 
 
-def fetch_city(city, key):
+def fetch_city(city: Text, key: Text) -> List[Text]:
     url_v2 = URL_API_GEO + 'lookup?location=' + city + key
     city = requests.get(url_v2).json()['location'][0]
     city_id = city['id']
@@ -31,10 +32,10 @@ def fetch_city(city, key):
     country_name = city['country']
     lat = city['lat']
     lon = city['lon']
-    return city_id, district_name, city_name, province_name, country_name, lat, lon
+    return [city_id, district_name, city_name, province_name, country_name, lat, lon]
 
 
-def fetch(city, day, key=MY_KEY):
+def fetch(city: Text, day: Text, key: Text = MY_KEY) -> Text:
     city_info = fetch_city(city, key)
     city_id = city_info[0]
     day_slot = {
