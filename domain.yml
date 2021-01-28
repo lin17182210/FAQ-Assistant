@@ -1,4 +1,3 @@
-version: '2.0'
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
@@ -36,6 +35,7 @@ intents:
 - tipFixFlash
 - videotapeCanAccelerate
 - cantChangeHeadPortrait
+- nlu_fallback
 entities:
 - object
 - course
@@ -50,35 +50,46 @@ entities:
 - unnormal
 - operation
 slots:
-  object:
-    type: text
   course:
     type: text
-  endpoint:
-    type: text
-  resource:
-    type: text
-  function:
-    type: text
-  tools:
-    type: text
-  formats:
-    type: text
-  score:
-    type: text
-  homework:
-    type: text
+    influence_conversation: true
   data_time:
     type: text
-  unnormal:
+    influence_conversation: true
+  endpoint:
     type: text
+    influence_conversation: true
+  formats:
+    type: text
+    influence_conversation: true
+  function:
+    type: text
+    influence_conversation: true
+  homework:
+    type: text
+    influence_conversation: true
+  object:
+    type: text
+    influence_conversation: true
   operation:
     type: text
+    influence_conversation: true
+  resource:
+    type: text
+    influence_conversation: true
+  score:
+    type: text
+    influence_conversation: true
+  tools:
+    type: text
+    influence_conversation: true
+  unnormal:
+    type: text
+    influence_conversation: true
 responses:
   utter_goodbye:
   - text: 再见
   - text: 拜拜
-  - text: 虽然我有万般舍不得，但是天下没有不散的宴席~祝您安好！
   - text: 期待下次再见！
   - text: 嗯嗯，下次需要时随时记得我哟~
   - text: see you!
@@ -86,7 +97,7 @@ responses:
   - text: 您好！我是您的AI智能助理！目前支持常见FAQ问题解答
   utter_thanks:
   - text: 嗯呢。不用客气~
-  - text: 这是我应该做的，主人~
+  - text: 这是我应该做的
   - text: 嗯嗯，合作愉快！
   utter_default:
   - text: 我没能理解到这句话的意思，你可以换种说法吗？
@@ -154,4 +165,3 @@ responses:
 actions:
 - action_fallback
 - action_first
-

@@ -11,8 +11,12 @@ from rasa_sdk import Tracker, Action
 from rasa_sdk.forms import FormAction
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import AllSlotsReset
-from actions.utils import fetch_intent_description, entity_compile_intent
+from actions.utils import fetch_intent_description, entity_compile_intent, retrieval_intent
 from markdownify import markdownify as md
+import logging
+
+
+logger = logging.getLogger(__name__)
 
 
 # class ActionWeatherForm(FormAction):
@@ -41,6 +45,7 @@ from markdownify import markdownify as md
 #         dispatcher.utter_message(weather_data)
 #         return [AllSlotsReset()]
 
+
 class ActionFirst(Action):
     
     def name(self) -> Text:
@@ -68,6 +73,7 @@ class ActionFirst(Action):
 
 class ActionFallBack(Action):
     
+    
     def name(self) -> Text:
         return "action_fallback"
     
@@ -78,25 +84,37 @@ class ActionFallBack(Action):
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
         AllSlotsReset()
-        entities = tracker.latest_message.get("entities", [])
-        intent_ranking = tracker.latest_message.get("intent_ranking", [])
-        highest_ranking_intent = intent_ranking[1]
-        entity_confidence_list = [(_.get("value"), _.get("confidence")) for _ in entities]
-        if len(entity_confidence_list) == 0:
+        latest_message = tracker.latest_message.get("text")
+        default_response = retrieval_intent(latest_message)
+        if default_response:
+            logger.debug("return default response")
+            dispatcher.utter_message(text=default_response)
+        elif not latest_message:
+            logger.debug("user don't input message")
             self.default_dispatcher(dispatcher)
         else:
-            if highest_ranking_intent.get("confidence") <= 0.25:
-                entity_list = [_.get("value") for _ in entities]
-                if entity_list:
-                    # 根据实体检索意图
-                    intent_rank_name = entity_compile_intent(entity_list)
-                    self.get_button_list(dispatcher, intent_rank_name)
-                else:
-                    self.default_dispatcher(dispatcher)
+            entities = tracker.latest_message.get("entities", [])
+            intent_ranking = tracker.latest_message.get("intent_ranking", [])
+            highest_ranking_intent = intent_ranking[1]
+            entity_confidence_list = [(_.get("value"), _.get("confidence")) for _ in entities]
+            if len(entity_confidence_list) == 0:
+                logger.debug("message don't contain entities")
+                self.default_dispatcher(dispatcher)
             else:
-                # 获取意图 预定义 description
-                intent_rank_name = [_.get("name") for _ in intent_ranking[1:10] if _.get("confidence") >= 0.15]
-                self.get_button_list(dispatcher, intent_rank_name)
+                if highest_ranking_intent.get("confidence") <= 0.3:
+                    logger.debug(f"retrieval intent by entities...{entities}")
+                    entity_list = [_.get("value") for _ in entities]
+                    if entity_list:
+                        # 根据实体检索意图
+                        intent_rank_name = entity_compile_intent(entity_list)
+                        self.get_button_list(dispatcher, intent_rank_name)
+                    else:
+                        self.default_dispatcher(dispatcher)
+                else:
+                    # 获取意图 预定义 description
+                    logger.debug(f"return possible top-5 intent....{intent_ranking}")
+                    intent_rank_name = [_.get("name") for _ in intent_ranking[1:10] if _.get("confidence") >= 0.15]
+                    self.get_button_list(dispatcher, intent_rank_name)
         return [AllSlotsReset()]
     
     @staticmethod
