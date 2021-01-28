@@ -1,212 +1,209 @@
 version: "2.0"
-
 nlu:
 - intent: beikeUpdateToSchoolTimetable
   examples: |
-    - [更新]{"entity":"operation"}了[备课]{"entity":"function"}模块是否会同步至[课表]{"entity":"resource"}
-    - [备课]{"entity":"function"}模块[更新]{"entity":"operation"}会同步到[课表]{"entity":"resource"}吗？
-    - [更新]{"entity":"operation"}[备课]{"entity":"function"}会同步至[课表]{"entity":"resource"}吗？
-    - [修改]{"entity":"operation"}[备课]{"entity":"function"}会同步至[课表]{"entity":"resource"}吗？
-    - [编辑]{"entity":"operation"}[备课]{"entity":"function"}会同步至[课表]{"entity":"resource"}吗？
+    - [更新](operation)了[备课](function)模块是否会同步至[课表](resource)
+    - [备课](function)模块[更新](operation)会同步到[课表](resource)吗？
+    - [更新](operation)[备课](function)会同步至[课表](resource)吗？
+    - [修改](operation)[备课](function)会同步至[课表](resource)吗？
+    - [编辑](operation)[备课](function)会同步至[课表](resource)吗？
 - intent: courseCantComplete
   examples: |
-    - [点播课]{"entity":"course"}章节无法完成
-    - 完成不了[点播课]{"entity":"course"}
-    - [点播课]{"entity":"course"}完成不了
-    - [点播课]{"entity":"course"}章节完成不了
+    - [点播课](course)章节无法完成
+    - 完成不了[点播课](course)
+    - [点播课](course)完成不了
+    - [点播课](course)章节完成不了
 - intent: examinationNoPermission
   examples: |
-    - 如何[浏览]{"entity":"operation"}发起的[考试]{"entity":"function"}
-    - 发起[考试]{"entity":"function"}，没有权限[查看]{"entity":"operation"}
-    - 怎么[点]{"entity":"operation"}开发起的[考试]{"entity":"function"}
-    - 没权限[查看]{"entity":"operation"}[考试]{"entity":"function"}
-    - [点]{"entity":"operation"}不开发起的[考试]{"entity":"function"}
-    - [看]{"entity":"operation"}不了发起的[考试]{"entity":"function"}
+    - 如何[浏览](operation)发起的[考试](function)
+    - 发起[考试](function)，没有权限[查看](operation)
+    - 怎么[点](operation)开发起的[考试](function)
+    - 没权限[查看](operation)[考试](function)
+    - [点](operation)不开发起的[考试](function)
+    - [看](operation)不了发起的[考试](function)
 - intent: lessonGarbledCode
   examples: |
-    - [课堂]{"entity":"course"}中出现[乱码]{"entity":"unnormal"}
-    - [上课]{"entity":"course"}[乱码]{"entity":"unnormal"}
-    - [乱码]{"entity":"unnormal"}
-    - [课中]{"entity":"course"}[乱码]{"entity":"unnormal"}
+    - [课堂](course)中出现[乱码](unnormal)
+    - [上课](course)[乱码](unnormal)
+    - [乱码](unnormal)
+    - [课中](course)[乱码](unnormal)
 - intent: ipadNoVoicedOnClass
   examples: |
-    - [平板]{"entity":"endpoint"}[上课]{"entity":"course"}[学生]{"entity":"object"}听不到我的[声音]{"entity":"formats"}
-    - [平板]{"entity":"endpoint"}[学生]{"entity":"object"}没[声音]{"entity":"formats"}
-    - [平板]{"entity":"endpoint"}[课上]{"entity":"course"}[学生]{"entity":"object"}听不到
-    - [学生上课]{"entity":"object"}听不到[老师]{"entity":"object"}的[声音]{"entity":"formats"}
-    - [学生上课]{"entity":"object"}听不到[老师]{"entity":"object"}的[声音]{"entity":"formats"}
-    - [学生]{"entity":"object"}听不到[老师]{"entity":"object"}的[声音]{"entity":"formats"}
+    - [平板](endpoint)[上课](course)[学生](object)听不到我的[声音](formats)
+    - [平板](endpoint)[学生](object)没[声音](formats)
+    - [平板](endpoint)[课上](course)[学生](object)听不到
+    - [学生上课](object)听不到[老师](object)的[声音](formats)
+    - [学生](object)听不到[老师](object)的[声音](formats)
 - intent: lockScreen
   examples: |
-    - 如何进行[锁屏]{"entity":"tools"}
-    - [锁定]{"entity":"operation"}[屏幕]{"entity":"tools"}
-    - [屏幕]{"entity":"tools"}[锁定]{"entity":"operation"}
-    - [锁屏]{"entity":"tools"}
+    - 如何进行[锁屏](tools)
+    - [锁定](operation)[屏幕](tools)
+    - [屏幕](tools)[锁定](operation)
+    - [锁屏](tools)
 - intent: changeVoice
   examples: |
-    - 怎么[改变]{"entity":"operation"}[声音]{"entity":"formats"}
-    - 如何[变声]{"entity":"formats"}
-    - [变声]{"entity":"formats"}
-    - [改变]{"entity":"operation"}[声音]{"entity":"formats"}
+    - 怎么[改变](operation)[声音](formats)
+    - 如何[变声](formats)
+    - [变声](formats)
+    - [改变](operation)[声音](formats)
 - intent: authorizationFlipCourseware
   examples: |
-    - 给[学生]{"entity":"object"}授权后能进行[课件]{"entity":"resource"}[翻页]{"entity":"operation"}吗？
-    - [课件]{"entity":"resource"}[翻页]{"entity":"operation"}
-    - 可以[翻页]{"entity":"operation"}[课件]{"entity":"resource"}吗？
-    - 给[学生]{"entity":"object"}授权后,[课件]{"entity":"resource"}是否可以[翻页]{"entity":"operation"}
+    - 给[学生](object)授权后能进行[课件](resource)[翻页](operation)吗？
+    - [课件](resource)[翻页](operation)
+    - 可以[翻页](operation)[课件](resource)吗？
+    - 给[学生](object)授权后,[课件](resource)是否可以[翻页](operation)
 - intent: commentPaperNoExamination
   examples: |
-    - 为什么我的[试卷]{"entity":"resource"}[讲评]{"entity":"operation"}没有相关[考试]{"entity":"function"}
-    - [考试]{"entity":"function"}[讲评]{"entity":"operation"}没有[考试]{"entity":"function"}
-    - [考试]{"entity":"function"}没有关联到[考试]{"entity":"function"}[讲评]{"entity":"operation"}
-    - [考试]{"entity":"function"}[讲评]{"entity":"operation"}里面没有相关[考试]{"entity":"function"}
+    - 为什么我的[试卷](resource)[讲评](operation)没有相关[考试](function)
+    - [考试](function)[讲评](operation)没有[考试](function)
+    - [考试](function)没有关联到[考试](function)[讲评](operation)
+    - [考试](function)[讲评](operation)里面没有相关[考试](function)
 - intent: cantMoveDiscussionArea
   examples: |
-    - 无法移动[讨论区]{"entity":"function"}
-    - 关掉[讨论区]{"entity":"function"}
-    - 拖动[讨论区]{"entity":"function"}
-    - 移开[讨论区]{"entity":"function"}
-    - [讨论区]{"entity":"function"}挡住课堂了，怎么移开
+    - 无法移动[讨论区](function)
+    - 关掉[讨论区](function)
+    - 拖动[讨论区](function)
+    - 移开[讨论区](function)
+    - [讨论区](function)挡住课堂了，怎么移开
 - intent: cantloadCourseware
   examples: |
-    - [课件]{"entity":"resource"}[加载]{"entity":"operation"}不出来
-    - 无法[加载]{"entity":"operation"}[课件]{"entity":"resource"}
-    - [课件]{"entity":"resource"}一直显示在[加载]{"entity":"operation"}中
-    - [课件]{"entity":"resource"}[加载]{"entity":"operation"}中
-    - [平板]{"entity":"endpoint"}上[课件]{"entity":"resource"}[加载]{"entity":"operation"}不出来
+    - [课件](resource)[加载](operation)不出来
+    - 无法[加载](operation)[课件](resource)
+    - [课件](resource)一直显示在[加载](operation)中
+    - [课件](resource)[加载](operation)中
+    - [平板](endpoint)上[课件](resource)[加载](operation)不出来
 - intent: noEnterClassButton
   examples: |
-    - [平板]{"entity":"endpoint"}进入[课堂]{"entity":"course"}的[按钮]{"entity":"tools"}消失
-    - 没有进入[课堂]{"entity":"course"}的[按钮]{"entity":"tools"}
-    - [平板]{"entity":"endpoint"}进入[课堂]{"entity":"course"}的[按钮]{"entity":"tools"}不见了
-    - [ipad]{"entity":"endpoint"}进入[课堂]{"entity":"course"}的[按钮]{"entity":"tools"}在哪里
-    - 进入课堂的[按键]{"entity":"tools"}不见了
+    - [平板](endpoint)进入[课堂](course)的[按钮](tools)消失
+    - 没有进入[课堂](course)的[按钮](tools)
+    - [平板](endpoint)进入[课堂](course)的[按钮](tools)不见了
+    - [ipad](endpoint)进入[课堂](course)的[按钮](tools)在哪里
+    - 进入课堂的[按键](tools)不见了
 - intent: arrangeTemporarySchoolTimetable
   examples: |
-    - 如何排[临时课表]{"entity":"resource"}
-    - [临时课表]{"entity":"resource"}怎么排
-    - [临时课表]{"entity":"resource"}
+    - 如何排[临时课表](resource)
+    - [临时课表](resource)怎么排
+    - [临时课表](resource)
+    - [临时课表](resource)[临时课表](resource)是什么
 - intent: ipadCantEnterClass
   examples: |
-    - [平板]{"entity":"endpoint"}无法进入[课堂]{"entity":"course"}
-    - [平板]{"entity":"endpoint"}进不了[课堂]{"entity":"course"}
-    - [平板]{"entity":"endpoint"}不能进入教室[上课]{"entity":"course"}
-    - [ipad]{"entity":"endpoint"}不能进到[课堂]{"entity":"course"}
-    - [课堂]{"entity":"course"}进不了
-    - [平板]{"entity":"endpoint"}无法进入[课堂]{"entity":"course"}
+    - [平板](endpoint)无法进入[课堂](course)
+    - [平板](endpoint)进不了[课堂](course)
+    - [平板](endpoint)不能进入教室[上课](course)
+    - [ipad](endpoint)不能进到[课堂](course)
+    - [课堂](course)进不了
 - intent: externalReleaseStudentVoice
   examples: |
-    - 如何外放[学生]{"entity":"object"}的[声音]{"entity":"formats"}
-    - [学生]{"entity":"object"}[声音]{"entity":"formats"}怎么外放
-    - 外放[学生]{"entity":"object"}[声音]{"entity":"formats"}
-    - 外发[声音]{"entity":"formats"}
-    - [声音]{"entity":"formats"}外发
+    - 如何外放[学生](object)的[声音](formats)
+    - [学生](object)[声音](formats)怎么外放
+    - 外放[学生](object)[声音](formats)
+    - 外发[声音](formats)
+    - [声音](formats)外发
 - intent: connectMicrophoneNoVoice
   examples: |
-    - 直播[上课]{"entity":"course"}[连麦]{"entity":"tools"}没有[声音]{"entity":"formats"}
-    - [连麦]{"entity":"tools"}没有[声音]{"entity":"formats"}
-    - 听不到对方[声音]{"entity":"formats"}
-    - [耳麦]{"entity":"tools"}没有[声音]{"entity":"formats"}
-    - [耳机]{"entity":"tools"}听不到[声音]{"entity":"formats"}
-    - [麦克风]{"entity":"tools"}没有[声音]{"entity":"formats"}
+    - 直播[上课](course)[连麦](tools)没有[声音](formats)
+    - [连麦](tools)没有[声音](formats)
+    - 听不到对方[声音](formats)
+    - [耳麦](tools)没有[声音](formats)
+    - [耳机](tools)听不到[声音](formats)
+    - [麦克风](tools)没有[声音](formats)
 - intent: examinationNoScore
   examples: |
-    - [学生]{"entity":"object"}按时[考试]{"entity":"function"}但是没有[成绩]{"entity":"score"}？
-    - [考试]{"entity":"function"}后没有[成绩]{"entity":"score"}
-    - 为什么[学生]{"entity":"object"}按时[考试]{"entity":"function"}后没有[成绩]{"entity":"score"}
-    - [学生]{"entity":"object"}[考试]{"entity":"function"}后没有[成绩]{"entity":"score"}
+    - [学生](object)按时[考试](function)但是没有[成绩](score)？
+    - [考试](function)后没有[成绩](score)
+    - 为什么[学生](object)按时[考试](function)后没有[成绩](score)
+    - [学生](object)[考试](function)后没有[成绩](score)
 - intent: ipadEditQuestion
   examples: |
-    - [平板]{"entity":"endpoint"}可以[编辑]{"entity":"operation"}[题目]{"entity":"resource"}吗？
-    - [平板]{"entity":"endpoint"}里面的[题目]{"entity":"resource"}[编辑]{"entity":"operation"}
-    - [ipad]{"entity":"endpoint"}可以[修改]{"entity":"operation"}[题]{"entity":"resource"}吗
-    - [平板]{"entity":"endpoint"}可以[编辑]{"entity":"operation"}资源库的[试题]{"entity":"resource"}吗
-    - [ipad]{"entity":"endpoint"}可以[更新]{"entity":"operation"}[试卷]{"entity":"resource"}吗
-    - [习题]{"entity":"resource"}在[平板]{"entity":"endpoint"}上可以[编辑]{"entity":"operation"}吗
-    - [习题]{"entity":"resource"}在[ipad]{"entity":"endpoint"}上是否可以[编辑]{"entity":"operation"}
+    - [平板](endpoint)可以[编辑](operation)[题目](resource)吗？
+    - [平板](endpoint)里面的[题目](resource)[编辑](operation)
+    - [ipad](endpoint)可以[修改](operation)[题](resource)吗
+    - [平板](endpoint)可以[编辑](operation)资源库的[试题](resource)吗
+    - [ipad](endpoint)可以[更新](operation)[试卷](resource)吗
+    - [习题](resource)在[平板](endpoint)上可以[编辑](operation)吗
+    - [习题](resource)在[ipad](endpoint)上是否可以[编辑](operation)
 - intent: microcourseCantUpload
   examples: |
-    - [微课]{"entity":"resource"}无法[上传]{"entity":"operation"}
-    - [上传]{"entity":"operation"}[微课]{"entity":"resource"}不成功
-    - 无法[上传]{"entity":"operation"}[微课]{"entity":"resource"}
-    - [微课]{"entity":"resource"}[上传]{"entity":"operation"}失败
-    - 不能[上传]{"entity":"operation"}[微课]{"entity":"resource"}
+    - [微课](resource)无法[上传](operation)
+    - [上传](operation)[微课](resource)不成功
+    - 无法[上传](operation)[微课](resource)
+    - [微课](resource)[上传](operation)失败
+    - 不能[上传](operation)[微课](resource)
 - intent: whereMyCourseware
   examples: |
-    - [上传]{"entity":"operation"}[课件]{"entity":"resource"}后在我的资源里找不到？
-    - 我的[课件]{"entity":"resource"}在哪里？
-    - [课件]{"entity":"resource"}[上传]{"entity":"operation"}后在哪里？
-    - 我的[课件]{"entity":"resource"}不见了
+    - [上传](operation)[课件](resource)后在我的资源里找不到？
+    - 我的[课件](resource)在哪里？
+    - [课件](resource)[上传](operation)后在哪里？
+    - 我的[课件](resource)不见了
 - intent: microcourseFlashScreen
   examples: |
-    - [微课]{"entity":"resource"}[录制]{"entity":"operation"}过程中出现[闪退]{"entity":"unnormal"}怎么办？
-    - [微课]{"entity":"resource"}[录制]{"entity":"operation"}[闪退]{"entity":"unnormal"}
-    - [录制]{"entity":"operation"}[微课]{"entity":"resource"}[闪退]{"entity":"unnormal"}
-    - [录制]{"entity":"operation"}[微课]{"entity":"resource"}失败
-    - [录制]{"entity":"operation"}[微课]{"entity":"resource"}不成功
-    - 不能[录制]{"entity":"operation"}[微课]{"entity":"resource"}
+    - [微课](resource)[录制](operation)过程中出现[闪退](unnormal)怎么办？
+    - [微课](resource)[录制](operation)[闪退](unnormal)
+    - [录制](operation)[微课](resource)[闪退](unnormal)
+    - [录制](operation)[微课](resource)失败
+    - [录制](operation)[微课](resource)不成功
+    - 不能[录制](operation)[微课](resource)
 - intent: homeworkSelectErrorStudent
   examples: |
-    - [修改]{"entity":"operation"}[作业]{"entity":"homework"}选择的[学生]{"entity":"object"}
-    - [作业]{"entity":"homework"}选择的[学生]{"entity":"object"}人数不正确
-    - [作业]{"entity":"homework"}[学生]{"entity":"object"}选择错了
-    - [修改]{"entity":"operation"}[作业]{"entity":"homework"}的[学生]{"entity":"object"}
+    - [修改](operation)[作业](homework)选择的[学生](object)
+    - [作业](homework)选择的[学生](object)人数不正确
+    - [作业](homework)[学生](object)选择错了
+    - [修改](operation)[作业](homework)的[学生](object)
 - intent: homeworkSelectError
   examples: |
-    - [取消]{"entity":"operation"}[作业]{"entity":"homework"}
-    - [作业]{"entity":"homework"}[布置]{"entity":"operation"}错误怎么办
-    - [修改]{"entity":"operation"}[布置]{"entity":"operation"}过的[作业]{"entity":"homework"}
-    - [删除]{"entity":"operation"}[作业]{"entity":"homework"}
-    - [作业]{"entity":"homework"}[作废]{"entity":"operation"}
+    - [取消](operation)[作业](homework)
+    - [作业](homework)[布置](operation)错误怎么办
+    - [修改](operation)[布置](operation)过的[作业](homework)
+    - [删除](operation)[作业](homework)
+    - [作业](homework)[作废](operation)
 - intent: cantSelectPhotoHomework
   examples: |
-    - [布置]{"entity":"operation"}[拍照作业]{"entity":"homework"}
-    - 如何[布置]{"entity":"operation"}[拍照作业]{"entity":"homework"}
-    - 无法[布置]{"entity":"operation"}[拍照作业]{"entity":"homework"}
-    - 怎么[布置]{"entity":"operation"}[拍照作业]{"entity":"homework"}？
-    - [拍照作业]{"entity":"homework"}怎么[布置]{"entity":"operation"}
+    - [布置](operation)[拍照作业](homework)
+    - 如何[布置](operation)[拍照作业](homework)
+    - 无法[布置](operation)[拍照作业](homework)
+    - 怎么[布置](operation)[拍照作业](homework)？
+    - [拍照作业](homework)怎么[布置](operation)
 - intent: howChangeHomeworkTime
   examples: |
-    - [作业]{"entity":"homework"}怎么[修改]{"entity":"operation"}[时间]{"entity":"data_time"}
-    - 怎么[修改]{"entity":"operation"}[作业]{"entity":"homework"}的[时间]{"entity":"data_time"}
-    - 无法[修改]{"entity":"operation"}[作业]{"entity":"homework"}[时间]{"entity":"data_time"}
-    - [作业]{"entity":"homework"}[时间]{"entity":"data_time"}
-    - [重新]{"entity":"operation"}设置[作业]{"entity":"homework"}[时间]{"entity":"data_time"}
+    - [作业](homework)怎么[修改](operation)[时间](data_time)
+    - 怎么[修改](operation)[作业](homework)的[时间](data_time)
+    - 无法[修改](operation)[作业](homework)[时间](data_time)
+    - [作业](homework)[时间](data_time)
+    - [重新](operation)设置[作业](homework)[时间](data_time)
 - intent: whatIsHomeworkType
   examples: |
-    - [作业]{"entity":"homework"}类型
-    - [作业]{"entity":"homework"}分类
-    - [作业]{"entity":"homework"}有哪些类型
-    - [对错作业]{"entity":"homework"}和[分数作业]{"entity":"homework"}有哪些
-    - [作业]{"entity":"homework"}类型有哪些
-    - [对错作业]{"entity":"homework"}是什么
-    - [分数作业]{"entity":"homework"}是什么
+    - [作业](homework)类型
+    - [作业](homework)分类
+    - [作业](homework)有哪些类型
+    - [对错作业](homework)和[分数作业](homework)有哪些
+    - [作业](homework)类型有哪些
+    - [对错作业](homework)是什么
+    - [分数作业](homework)是什么
 - intent: ipadPrintPhoneticSymbols
   examples: |
-    - [ipad]{"entity":"endpoint"}如何打出[音标]{"entity":"formats"}
-    - [平板]{"entity":"endpoint"}打出[音标]{"entity":"formats"}
-    - [平板]{"entity":"endpoint"}如何打出[音标]{"entity":"formats"}
-    - 怎么打[音标]{"entity":"formats"}
-    - [音标]{"entity":"formats"}在[ipad]{"entity":"endpoint"}上怎么打出来
+    - [ipad](endpoint)如何打出[音标](formats)
+    - [平板](endpoint)打出[音标](formats)
+    - [平板](endpoint)如何打出[音标](formats)
+    - 怎么打[音标](formats)
+    - [音标](formats)在[ipad](endpoint)上怎么打出来
 - intent: tipFixFlash
   examples: |
-    - 进入[课堂]{"entity":"course"}总提示[flash]{"entity":"tools"}需要[修复]{"entity":"operation"}
-    - [修复]{"entity":"operation"}[flash]{"entity":"tools"}
-    - [flash]{"entity":"tools"}怎么[修复]{"entity":"operation"}
+    - 进入[课堂](course)总提示[flash](tools)需要[修复](operation)
+    - [修复](operation)[flash](tools)
+    - [flash](tools)怎么[修复](operation)
 - intent: videotapeCanAccelerate
   examples: |
-    - [录像]{"entity":"formats"}是否可以倍速播放
-    - [录像]{"entity":"formats"}可以倍速播放吗
-    - 快速播放[录像]{"entity":"formats"}
-    - [录像]{"entity":"formats"}加速
+    - [录像](formats)是否可以倍速播放
+    - [录像](formats)可以倍速播放吗
+    - 快速播放[录像](formats)
+    - [录像](formats)加速
 - intent: cantChangeHeadPortrait
   examples: |
-    - 无法[修改]{"entity":"operation"}[头像]{"entity":"formats"}
-    - 为什么[换]{"entity":"operation"}不了[头像]{"entity":"formats"}
-    - 不能[换]{"entity":"operation"}[头像]{"entity":"formats"}
-    - [修改]{"entity":"operation"}[头像]{"entity":"formats"}
-    - [替换]{"entity":"operation"}[头像]{"entity":"formats"}
-
+    - 无法[修改](operation)[头像](formats)
+    - 为什么[换](operation)不了[头像](formats)
+    - 不能[换](operation)[头像](formats)
+    - [修改](operation)[头像](formats)
+    - [替换](operation)[头像](formats)
 - synonym: 更新
   examples: |
     - 编辑
@@ -246,7 +243,6 @@ nlu:
     - 上课
     - 课中
     - 课上
-    - 课中
     - 教室
     - 直播上课
     - 学生上课
