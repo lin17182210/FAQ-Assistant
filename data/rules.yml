@@ -121,3 +121,7 @@ rules:
     steps:
     - intent: cantChangeHeadPortrait
     - action: utter_cantChangeHeadPortrait
+  - rule: fallback
+    steps:
+    - intent: nlu_fallback
+    - action: action_fallback
