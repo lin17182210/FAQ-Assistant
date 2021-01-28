@@ -41,8 +41,10 @@ nlu:
     - 如何进行[锁屏]{"entity":"tools"}
     - [锁定]{"entity":"operation"}[屏幕]{"entity":"tools"}
     - [屏幕]{"entity":"tools"}[锁定]{"entity":"operation"}
+    - [锁屏]{"entity":"tools"}
 - intent: changeVoice
   examples: |
+    - 怎么[改变]{"entity":"operation"}[声音]{"entity":"formats"}
     - 如何[变声]{"entity":"formats"}
     - [变声]{"entity":"formats"}
     - [改变]{"entity":"operation"}[声音]{"entity":"formats"}
@@ -57,11 +59,14 @@ nlu:
     - 为什么我的[试卷]{"entity":"resource"}[讲评]{"entity":"operation"}没有相关[考试]{"entity":"function"}
     - [考试]{"entity":"function"}[讲评]{"entity":"operation"}没有[考试]{"entity":"function"}
     - [考试]{"entity":"function"}没有关联到[考试]{"entity":"function"}[讲评]{"entity":"operation"}
+    - [考试]{"entity":"function"}[讲评]{"entity":"operation"}里面没有相关[考试]{"entity":"function"}
 - intent: cantMoveDiscussionArea
   examples: |
     - 无法移动[讨论区]{"entity":"function"}
     - 关掉[讨论区]{"entity":"function"}
     - 拖动[讨论区]{"entity":"function"}
+    - 移开[讨论区]{"entity":"function"}
+    - [讨论区]{"entity":"function"}挡住课堂了，怎么移开
 - intent: cantloadCourseware
   examples: |
     - [课件]{"entity":"resource"}[加载]{"entity":"operation"}不出来
@@ -98,7 +103,7 @@ nlu:
     - [声音]{"entity":"formats"}外发
 - intent: connectMicrophoneNoVoice
   examples: |
-    - [直播上课]{"entity":"course"}[连麦]{"entity":"tools"}没有[声音]{"entity":"formats"}
+    - 直播[上课]{"entity":"course"}[连麦]{"entity":"tools"}没有[声音]{"entity":"formats"}
     - [连麦]{"entity":"tools"}没有[声音]{"entity":"formats"}
     - 听不到对方[声音]{"entity":"formats"}
     - [耳麦]{"entity":"tools"}没有[声音]{"entity":"formats"}
@@ -108,20 +113,24 @@ nlu:
   examples: |
     - [学生]{"entity":"object"}按时[考试]{"entity":"function"}但是没有[成绩]{"entity":"score"}？
     - [考试]{"entity":"function"}后没有[成绩]{"entity":"score"}
+    - 为什么[学生]{"entity":"object"}按时[考试]{"entity":"function"}后没有[成绩]{"entity":"score"}
+    - [学生]{"entity":"object"}[考试]{"entity":"function"}后没有[成绩]{"entity":"score"}
 - intent: ipadEditQuestion
   examples: |
     - [平板]{"entity":"endpoint"}可以[编辑]{"entity":"operation"}[题目]{"entity":"resource"}吗？
-    - [平板]{"entity":"endpoint"}[题目]{"entity":"resource"}[编辑]{"entity":"operation"}
-    - [ipad]{"entity":"endpoint"}可以[修改]{"entity":"operation"}[资源]{"entity":"resource"}吗
-    - [平板]{"entity":"endpoint"}可以[编辑]{"entity":"operation"}[资源]{"entity":"resource"}吗
+    - [平板]{"entity":"endpoint"}里面的[题目]{"entity":"resource"}[编辑]{"entity":"operation"}
+    - [ipad]{"entity":"endpoint"}可以[修改]{"entity":"operation"}[题]{"entity":"resource"}吗
+    - [平板]{"entity":"endpoint"}可以[编辑]{"entity":"operation"}资源库的[试题]{"entity":"resource"}吗
     - [ipad]{"entity":"endpoint"}可以[更新]{"entity":"operation"}[试卷]{"entity":"resource"}吗
-    - [平板]{"entity":"endpoint"}[习题]{"entity":"resource"}[编辑]{"entity":"operation"}
+    - [习题]{"entity":"resource"}在[平板]{"entity":"endpoint"}上可以[编辑]{"entity":"operation"}吗
+    - [习题]{"entity":"resource"}在[ipad]{"entity":"endpoint"}上是否可以[编辑]{"entity":"operation"}
 - intent: microcourseCantUpload
   examples: |
     - [微课]{"entity":"resource"}无法[上传]{"entity":"operation"}
     - [上传]{"entity":"operation"}[微课]{"entity":"resource"}不成功
     - 无法[上传]{"entity":"operation"}[微课]{"entity":"resource"}
     - [微课]{"entity":"resource"}[上传]{"entity":"operation"}失败
+    - 不能[上传]{"entity":"operation"}[微课]{"entity":"resource"}
 - intent: whereMyCourseware
   examples: |
     - [上传]{"entity":"operation"}[课件]{"entity":"resource"}后在我的资源里找不到？
@@ -133,6 +142,9 @@ nlu:
     - [微课]{"entity":"resource"}[录制]{"entity":"operation"}过程中出现[闪退]{"entity":"unnormal"}怎么办？
     - [微课]{"entity":"resource"}[录制]{"entity":"operation"}[闪退]{"entity":"unnormal"}
     - [录制]{"entity":"operation"}[微课]{"entity":"resource"}[闪退]{"entity":"unnormal"}
+    - [录制]{"entity":"operation"}[微课]{"entity":"resource"}失败
+    - [录制]{"entity":"operation"}[微课]{"entity":"resource"}不成功
+    - 不能[录制]{"entity":"operation"}[微课]{"entity":"resource"}
 - intent: homeworkSelectErrorStudent
   examples: |
     - [修改]{"entity":"operation"}[作业]{"entity":"homework"}选择的[学生]{"entity":"object"}
@@ -158,6 +170,8 @@ nlu:
     - [作业]{"entity":"homework"}怎么[修改]{"entity":"operation"}[时间]{"entity":"data_time"}
     - 怎么[修改]{"entity":"operation"}[作业]{"entity":"homework"}的[时间]{"entity":"data_time"}
     - 无法[修改]{"entity":"operation"}[作业]{"entity":"homework"}[时间]{"entity":"data_time"}
+    - [作业]{"entity":"homework"}[时间]{"entity":"data_time"}
+    - [重新]{"entity":"operation"}设置[作业]{"entity":"homework"}[时间]{"entity":"data_time"}
 - intent: whatIsHomeworkType
   examples: |
     - [作业]{"entity":"homework"}类型
@@ -169,6 +183,7 @@ nlu:
     - [分数作业]{"entity":"homework"}是什么
 - intent: ipadPrintPhoneticSymbols
   examples: |
+    - [ipad]{"entity":"endpoint"}如何打出[音标]{"entity":"formats"}
     - [平板]{"entity":"endpoint"}打出[音标]{"entity":"formats"}
     - [平板]{"entity":"endpoint"}如何打出[音标]{"entity":"formats"}
     - 怎么打[音标]{"entity":"formats"}
@@ -180,6 +195,7 @@ nlu:
     - [flash]{"entity":"tools"}怎么[修复]{"entity":"operation"}
 - intent: videotapeCanAccelerate
   examples: |
+    - [录像]{"entity":"formats"}是否可以倍速播放
     - [录像]{"entity":"formats"}可以倍速播放吗
     - 快速播放[录像]{"entity":"formats"}
     - [录像]{"entity":"formats"}加速
@@ -202,6 +218,7 @@ nlu:
     - 更改
     - 替换
     - 换
+    - 重新
 - synonym: 查看
   examples: |
     - 看
@@ -213,13 +230,35 @@ nlu:
   examples: |
     - 作废
     - 取消
-- synonym: 耳麦
+- synonym: 连麦
   examples: |
     - 耳机
     - 麦克风
+    - 耳麦
 - synonym: 教师
   examples: |
     - 老师
 - synonym: 平板
   examples: |
     - ipad
+- synonym: 课堂
+  examples: |
+    - 上课
+    - 课中
+    - 课上
+    - 课中
+    - 教室
+    - 直播上课
+    - 学生上课
+- synonym: 成绩
+  examples: |
+    - 得分
+- synonym: 习题
+  examples: |
+    - 题目
+    - 试题
+    - 题
+- synonym: 考试
+  examples: |
+    - 测试
+    - 参加考试

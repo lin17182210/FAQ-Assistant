@@ -8,8 +8,9 @@ pipeline:
 # # See https://rasa.com/docs/rasa/tuning-your-model for more information.
    - name: MitieNLP
      model: data/nlpModel/total_word_feature_extractor_zh.dat
-   - name: JiebaTokenizer
+   - name: custom_tokenizer.CustomJiebaTokenizer
      dictionary_path: data/userDict/userDict.txt
+     case_sensitive: True
    - name: RegexFeaturizer
    - name: MitieFeaturizer
    - name: DIETClassifier
@@ -17,7 +18,7 @@ pipeline:
    - name: EntitySynonymMapper
    - name: RegexEntityExtractor
    - name: FallbackClassifier
-     threshold: 0.7
+     threshold: 0.5
      ambiguity_threshold: 0.1
 
 # Configuration for Rasa Core.
@@ -35,5 +36,5 @@ policies:
     max_history: 4
     epochs: 200
   - name: RulePolicy
-    core_fallback_threshold: 0.6
+    core_fallback_threshold: 0.85
     core_fallback_action_name: "action_fallback"
